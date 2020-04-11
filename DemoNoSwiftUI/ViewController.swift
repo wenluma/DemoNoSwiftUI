@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         view.addTarget(self, action: #selector(didTap2), for: .touchUpInside)
         self.addView = view
         self.addView!.backgroundColor = UIColor.yellow
+        
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+            
+        }) { (finished) in
+            
+        }
     }
     
     /// frame 的修改 右上 -》 左下
