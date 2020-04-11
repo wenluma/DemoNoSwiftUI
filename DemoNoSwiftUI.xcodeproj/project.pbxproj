@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4957718D4AAC4662DE50FD29 /* Pods_DemoNoSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAD1EB94E57810EE56C88CC /* Pods_DemoNoSwiftUI.framework */; };
+		8E1C5E2624419BF1005CBACA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2524419BF1005CBACA /* Const.swift */; };
 		8EDF53222440222600517EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53212440222600517EAE /* AppDelegate.swift */; };
 		8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53232440222600517EAE /* SceneDelegate.swift */; };
 		8EDF53262440222600517EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53252440222600517EAE /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0AAD1EB94E57810EE56C88CC /* Pods_DemoNoSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoNoSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1C5E2524419BF1005CBACA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8EDF531E2440222600517EAE /* DemoNoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoNoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDF53212440222600517EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EDF53232440222600517EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +97,6 @@
 				B8841388C25EF7CBD3983115 /* Pods-DemoNoSwiftUI.debug.xcconfig */,
 				ADEDE65026F7F05B39B748E3 /* Pods-DemoNoSwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,6 +128,7 @@
 				8EDF53212440222600517EAE /* AppDelegate.swift */,
 				8EDF53232440222600517EAE /* SceneDelegate.swift */,
 				8EDF53252440222600517EAE /* ViewController.swift */,
+				8E1C5E2524419BF1005CBACA /* Const.swift */,
 				8EDF53272440222600517EAE /* Main.storyboard */,
 				8EDF532A2440222800517EAE /* Assets.xcassets */,
 				8EDF532C2440222800517EAE /* LaunchScreen.storyboard */,
@@ -329,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDF53262440222600517EAE /* ViewController.swift in Sources */,
+				8E1C5E2624419BF1005CBACA /* Const.swift in Sources */,
 				8EDF53222440222600517EAE /* AppDelegate.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 			);
