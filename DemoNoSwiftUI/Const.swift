@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // 声明常量
 public let kDuration = 0.3
