@@ -12,4 +12,4 @@ import Foundation
 public let kDuration = 0.3
 
 // 内部可见
-private let kVersion = 0.1.0
+private let kVersion = "0.1.0"
