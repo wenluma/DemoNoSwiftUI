@@ -159,7 +159,7 @@ func operationLock() {
     }
 }
 
-//// tabbar 修改 底部的毛玻璃效果
+//// tabbar 修改 底部的毛玻璃效果， shadow color的颜色修改
 //func blurEffect() {
 //    let bottomSafeAreaHeight: CGFloat =
 //    UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
@@ -174,4 +174,6 @@ func operationLock() {
 //
 //    self.tabBar.insertSubview(backView, at: 0)
 //    tabBar.backgroundImage = backView.image
+//    tabBar.shadowImage = UIImage(color: .kimGray04, size: CGSize(width:width, height: 0.4))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal) // tabbar 顶部的 shadow color 修改， 防止被拉伸
+
 //}
