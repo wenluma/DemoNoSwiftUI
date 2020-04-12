@@ -153,4 +153,8 @@ let lock = NSLock()
 func operationLock() {
     lock.lock(); defer { lock.unlock() }
     print("hello lock")
+    
+    autoreleasepool {
+        print("hello auto releasepool")
+    }
 }
