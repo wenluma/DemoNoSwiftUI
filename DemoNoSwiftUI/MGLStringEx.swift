@@ -11,6 +11,7 @@ import UIKit
 
 extension String {
     func toAttribute(color: UIColor) -> NSAttributedString {
+        let ranage = NSRange(location: 0, length: self.count) // 获取字符串的range
         let attribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor : color as Any,
                                                         NSAttributedString.Key.baselineOffset: 0 as Any] // -1 向下， 1 上
         
