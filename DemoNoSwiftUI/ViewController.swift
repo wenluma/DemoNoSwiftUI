@@ -158,3 +158,20 @@ func operationLock() {
         print("hello auto releasepool")
     }
 }
+
+//// tabbar 修改 底部的毛玻璃效果
+//func blurEffect() {
+//    let bottomSafeAreaHeight: CGFloat =
+//    UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
+//    let frame = CGRect.init(0, 0, UIScreen.main.bounds.size.width, 49 + bottomSafeAreaHeight)
+//    let backView: UIImageView = UIImageView(frame: frame)
+//    backView.image = UIImage(color: UIColor.white.withAlphaComponent(0.5), size: frame.size)
+//
+//    let effect = UIBlurEffect.init(style: .light)
+//    let effectView: UIVisualEffectView  = UIVisualEffectView(effect: effect)
+//    effectView.frame = backView.bounds
+//    backView.addSubview(effectView)
+//
+//    self.tabBar.insertSubview(backView, at: 0)
+//    tabBar.backgroundImage = backView.image
+//}
