@@ -148,4 +148,9 @@ class ViewController: UIViewController {
 
 }
 
-
+// 加锁， 解锁操作
+let lock = NSLock()
+func operationLock() {
+    lock.lock(); defer { lock.unlock() }
+    print("hello lock")
+}
