@@ -11,7 +11,9 @@ import UIKit
 
 extension String {
     func toAttribute(color: UIColor) -> NSAttributedString {
-        let attribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor : color as Any]
+        let attribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor : color as Any,
+                                                        NSAttributedString.Key.baselineOffset: 0 as Any] // -1 向下， 1 上
+        
         return NSAttributedString(string: self, attributes: attribute)
     }
 }
