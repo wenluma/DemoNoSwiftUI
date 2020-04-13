@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import YYText
 
 class ViewController: UIViewController {
 
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
         }) { (finished) in
             
         }
+        
+        richText()
     }
     
     /// frame 的修改 右上 -》 左下
@@ -145,7 +148,63 @@ class ViewController: UIViewController {
 
         
     }
-
+    
+    func richText() -> Void {
+        //        NSAttributedString.Key.foregroundColor.rawValue
+        
+        //        {
+        //            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:@"Another Link"];
+        //            one.yy_font = [UIFont boldSystemFontOfSize:30];
+        //            one.yy_color = [UIColor redColor];
+        //
+        //            YYTextBorder *border = [YYTextBorder new];
+        //            border.cornerRadius = 50;
+        //            border.insets = UIEdgeInsetsMake(0, -10, 0, -10);
+        //            border.strokeWidth = 0.5;
+        //            border.strokeColor = one.yy_color;
+        //            border.lineStyle = YYTextLineStyleSingle;
+        //            one.yy_textBackgroundBorder = border;
+        //
+        //            YYTextBorder *highlightBorder = border.copy;
+        //            highlightBorder.strokeWidth = 0;
+        //            highlightBorder.strokeColor = one.yy_color;
+        //            highlightBorder.fillColor = one.yy_color;
+        //
+        //            YYTextHighlight *highlight = [YYTextHighlight new];
+        //            [highlight setColor:[UIColor blueColor]];
+        //            [highlight setBackgroundBorder:highlightBorder];
+        //            highlight.tapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+        //                [_self showMessage:[NSString stringWithFormat:@"Tap: %@",[text.string substringWithRange:range]]];
+        //            };
+        //            [one yy_setTextHighlight:highlight range:one.yy_rangeOfAll];
+        //
+        //            [text appendAttributedString:one];
+        //            [text appendAttributedString:[self padding]];
+        //        }
+        let str = "Another Link"
+        let range = NSMakeRange(0, str.count)
+        let mutAttributed = NSMutableAttributedString(string: str)
+        mutAttributed.yy_font = .boldSystemFont(ofSize: 30)
+        mutAttributed.yy_color = .blue
+        
+        let highlight = YYTextHighlight()
+        highlight.setColor(.red)
+        //        highlight.tapAction = { [weak self] (view, attributeStr, range, rect) in
+        ////                   guard let self = self else { return }
+        //            print("tap: ...")
+        //        }
+        mutAttributed.yy_setTextHighlight(highlight, range: range)
+        
+        let label = YYLabel()
+        self.view.addSubview(label)
+        label.attributedText = mutAttributed
+        label .sizeToFit()
+        label.center = CGPoint(x: 100, y:300)
+        label.highlightTapAction = { [weak self] (view, attributeStr, range, rect) in
+            guard let `self` = self else { return }
+            print("tap: ...")
+        }
+    }
 }
 
 // 加锁， 解锁操作
@@ -159,7 +218,7 @@ func operationLock() {
     }
 }
 
-//// tabbar 修改 底部的毛玻璃效果， shadow color的颜色修改
+//// tabbar 修改 底部的毛玻璃效果， shadow color的颜色修改, 结合底部的 scollview 才能看出效果，注意 clipsToBounds
 //func blurEffect() {
 //    let bottomSafeAreaHeight: CGFloat =
 //    UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
@@ -177,3 +236,10 @@ func operationLock() {
 //    tabBar.shadowImage = UIImage(color: .kimGray04, size: CGSize(width:width, height: 0.4))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal) // tabbar 顶部的 shadow color 修改， 防止被拉伸
 
 //}
+
+//let hightlight = YYTextHighlight()
+//hightlight.tapAction = { (view, attStr, range, tect) in
+//    self.delegate?.messageLabel(onPressShowAllContent: self)
+//}
+//moreAttr.yy_setTextHighlight(hightlight, range: NSMakeRange(0, moreAttr.length))
+
