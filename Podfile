@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'DemoNoSwiftUI' do
     pod 'SnapKit', '~> 5.0.0'
+    pod 'YYText'
 end

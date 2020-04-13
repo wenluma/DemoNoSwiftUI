@@ -1,16 +1,20 @@
 PODS:
   - SnapKit (5.0.1)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - SnapKit (~> 5.0.0)
+  - YYText
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - SnapKit
+    - YYText
 
 SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c0081dda00ed7d607eae7a0fc9eb3a1ff8c312de
+PODFILE CHECKSUM: 581e8f2ab5d7294b41d95d256d0488a1e4825cca
 
 COCOAPODS: 1.8.4
