@@ -243,3 +243,5 @@ func operationLock() {
 //}
 //moreAttr.yy_setTextHighlight(hightlight, range: NSMakeRange(0, moreAttr.length))
 
+// 类型判断
+//guard let attributes = layoutAttributes as? MessagesCollectionViewLayoutAttributes else { return }
