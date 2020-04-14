@@ -69,7 +69,7 @@ extension NSAttributedString {
         if (self.length < 1) {
             return CGRect.zero
         }
-        
+        // YYLabel 的高度计算， emoji 表情的比较准
 //        let container = YYTextContainer.init()
 //        container.size = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
 //        container.maximumNumberOfRows = numberOfRows
@@ -79,6 +79,7 @@ extension NSAttributedString {
 //        }
 //        return textLayout.textBoundingRect
         
+        // 系统的高度计算 emoji 表情差的比较多
         return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
     }
 }
