@@ -130,8 +130,6 @@ class ViewController: UIViewController {
             maker.width.height.equalTo(0);
         }
         self.view.layoutIfNeeded()
-
-
         
 //        btn.layer.anchorPoint = CGPoint(x: 1.0, y: 0.0)
 //        btn.layer.position = CGPoint(x:150, y: 100)
