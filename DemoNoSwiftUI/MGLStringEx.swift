@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import YYText
 
 extension String {
     func toAttribute(color: UIColor) -> NSAttributedString {
@@ -16,5 +17,68 @@ extension String {
                                                         NSAttributedString.Key.baselineOffset: 0 as Any] // -1 向下， 1 上
         
         return NSAttributedString(string: self, attributes: attribute)
+    }
+    
+    func isContainChinese() -> Bool {
+        let string = self as NSString
+        for index in 0..<string.length {
+            let char = string.character(at: index)
+            if char > 0x4e00 && char < 0x9fff {
+                return true
+            }
+        }
+        return false
+    }
+
+    func isChinese() -> Bool {
+        let format = "SELF matches %@"
+        let match = "(^[\\u4e00-\\u9fa5]+$)"
+        let predicate = NSPredicate.init(format: format, argumentArray: [match])
+        return predicate.evaluate(with: self)
+    }
+    
+    func nsRange(from range: Range<String.Index>) -> NSRange {
+        let utf16view = self.utf16
+        if let from = range.lowerBound.samePosition(in: utf16view),
+            let to = range.upperBound.samePosition(in: utf16view)
+        {
+            return NSMakeRange(
+                utf16view.distance(from: utf16view.startIndex, to: from),
+                utf16view.distance(from: from, to: to))
+        } else {
+            return NSMakeRange(0, 0)
+        }
+
+    }
+
+    func range(from nsRange: NSRange) -> Range<String.Index>? {
+        guard
+            let from16 = utf16.index(
+                utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
+            let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
+            let from = String.Index(from16, within: self),
+            let to = String.Index(to16, within: self)
+        else { return nil }
+        return from..<to
+    }
+}
+
+extension NSAttributedString {
+   // yylabel 使用时
+    func yy_getAttrRect(maxWidth: CGFloat, numberOfRows: UInt = 0) -> CGRect {
+        if (self.length < 1) {
+            return CGRect.zero
+        }
+        
+//        let container = YYTextContainer.init()
+//        container.size = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
+//        container.maximumNumberOfRows = numberOfRows
+//
+//        guard let textLayout = YYTextLayout.init(container: container, text: self) else {
+//            return CGRect.zero
+//        }
+//        return textLayout.textBoundingRect
+        
+        return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
     }
 }

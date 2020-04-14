@@ -149,7 +149,70 @@ class ViewController: UIViewController {
         
     }
     
+    func rich0() {
+        let str = "哈哈哦" // YYLabel 的高度设定， 跟 系统的计算，YYLabel 不同
+        let label = getYYLabel(str: str, maxWidth: 150)
+        view.addSubview(label)
+        label.center = CGPoint(x:250, y:150);
+    }
+    
+    func rich1() {
+        let str = "abdsgewg@23"
+        let label = getYYLabel(str: str, maxWidth: 150)
+        view.addSubview(label)
+        label.center = CGPoint(x:250, y:100);
+    }
+    
+    func rich2() {
+        let str = "abcd"
+        let label = getYYLabel(str: str, maxWidth: 150)
+        view.addSubview(label)
+        label.center = CGPoint(x:250, y:200);
+    }
+    
+    func rich3() {
+        let str = "as9啊个"
+        let label = getYYLabel(str: str, maxWidth: 150)
+        view.addSubview(label)
+        label.center = CGPoint(x:250, y:300);
+
+    }
+    
+    func richemoji() {
+        let label = getYYLableEmoji(emojiImgName: "emoji_almostcry", str: "", emojiSize: 13, fontSize: 16, maxWidth: 100)
+        view.addSubview(label)
+        label.center = CGPoint(x:100, y:100);
+    }
+    
+    func richemoji2() {
+        let label = getYYLableEmoji(emojiImgName: "emoji_almostcry", str: "呵呵啊哦", emojiSize: 16, fontSize: 16, maxWidth: 100)
+        view.addSubview(label)
+        label.center = CGPoint(x:100, y:150);
+    }
+    
+    func setTextCentered(attributedText: NSMutableAttributedString?) {
+        guard let text = attributedText else { return }
+        if text.length == 0 {
+            return
+        }
+//        if text.string.isChinese() {
+//            if #available(iOS 11.0, *) {
+//                text.addAttribute(.baselineOffset, value: -1.1, range: NSMakeRange(0, text.length))
+//            } else {
+//                text.addAttribute(.baselineOffset, value: -0.4, range: NSMakeRange(0, text.length))
+//            }
+//        }
+    }
+// 计算采用 yy_getAttrRect 获取一个准确的值
+//
+    
     func richText() -> Void {
+        rich0()
+        rich1()
+        rich2()
+        rich3()
+        richemoji()
+        richemoji2()
         //        NSAttributedString.Key.foregroundColor.rawValue
         
         //        {
@@ -181,11 +244,20 @@ class ViewController: UIViewController {
         //            [text appendAttributedString:one];
         //            [text appendAttributedString:[self padding]];
         //        }
-        let str = "Another Link"
+        
+        
+        let str = "奥三等"
         let range = NSMakeRange(0, str.count)
         let mutAttributed = NSMutableAttributedString(string: str)
-        mutAttributed.yy_font = .boldSystemFont(ofSize: 30)
+        mutAttributed.yy_font = .boldSystemFont(ofSize: 14)
+        mutAttributed.yy_lineSpacing = 6
         mutAttributed.yy_color = .blue
+        
+        let rect = mutAttributed .boundingRect(with: CGSize(width: 100, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        
+//        print("Testi奥三等 \(rect)")
+        
+        
         
         let highlight = YYTextHighlight()
         highlight.setColor(.red)
