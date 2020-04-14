@@ -14,3 +14,6 @@ public let kDuration = 0.3
 
 // 内部可见
 private let kVersion = "0.1.0"
+
+let f1 = ceil(0.1) // 1 向上取整
+let f2 = floor(0.1) // 0 向下取整
