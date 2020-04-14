@@ -146,6 +146,9 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
 
+        let apple: Fruit = Apple(name: "apple")
+        let makeAddress = (apple as! Apple).address
+        print(makeAddress)
         
     }
     
