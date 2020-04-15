@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         }
         view.backgroundColor = UIColor.yellow
         
-        view.addTarget(self, action: #selector(didTap2), for: .touchUpInside)
+        view.addTarget(self, action: #selector(didTapChatButton), for: .touchUpInside)
         self.addView = view
         self.addView!.backgroundColor = UIColor.yellow
         
@@ -146,6 +146,11 @@ class ViewController: UIViewController {
 
         let apple: Fruit = Apple(name: "apple")
         Fruit.intro()
+        Fruit.drink = false
+        print("fruit.drink = \(Fruit.drink)")
+        Apple.drink = true
+        print("Apple.drink = \(Apple.drink)")
+
         let makeAddress = (apple as! Apple).address
         print(makeAddress)
         
