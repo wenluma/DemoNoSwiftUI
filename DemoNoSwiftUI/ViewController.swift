@@ -42,6 +42,14 @@ class ViewController: UIViewController {
         }
         
         richText()
+        
+        let img = UIImage(named: "voice_icon")
+        let img2 = img?.mirror(orientation: .left)
+        let imgv = UIImageView(image: img2)
+        self.view.addSubview(imgv)
+        imgv.sizeToFit()
+        imgv.center = CGPoint(x: 50, y: 200);
+        
     }
     
     /// frame 的修改 右上 -》 左下
