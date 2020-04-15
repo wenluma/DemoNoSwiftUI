@@ -13,6 +13,14 @@ class Fruit {
     init(name: String) {
         self.name = name
     }
+    // 类方法
+    static func intro() -> String {
+        return "this is fruit"
+    }
+    // 类方法
+    class func intro1() -> String {
+        return "this is fruit2"
+    }
 }
 
 class Apple: Fruit {

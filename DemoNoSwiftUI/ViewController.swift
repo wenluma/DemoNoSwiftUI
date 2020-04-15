@@ -145,6 +145,7 @@ class ViewController: UIViewController {
         }
 
         let apple: Fruit = Apple(name: "apple")
+        Fruit.intro()
         let makeAddress = (apple as! Apple).address
         print(makeAddress)
         
