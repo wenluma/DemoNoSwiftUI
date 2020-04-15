@@ -153,6 +153,7 @@ class ViewController: UIViewController {
 
         let makeAddress = (apple as! Apple).address
         print(makeAddress)
+        print(apple.toRawPointer())
         
     }
     

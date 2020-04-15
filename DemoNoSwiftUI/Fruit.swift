@@ -22,6 +22,12 @@ class Fruit {
     class func intro1() -> String {
         return "this is fruit2"
     }
+    
+    // 获取对象的地址 refrence object address
+    func toRawPointer() -> UnsafeMutableRawPointer {
+        let pointer = Unmanaged.passUnretained(self).toOpaque()
+        return pointer
+    }
 }
 
 class Apple: Fruit {
