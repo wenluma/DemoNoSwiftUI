@@ -38,6 +38,7 @@ class Apple: Fruit {
     
     // 类方法 的重写， 需要 override
    override static func intro1() -> String {
+        print("文件：\(#file) 函数：\(#function) 行：\(#line) 列：\(#column)")
         return "this is apple"
     }
 }
