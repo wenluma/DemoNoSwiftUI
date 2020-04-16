@@ -16,6 +16,14 @@ public class MGLObservable<Element> {
     
 }
 
+protocol MGLObservableType {
+    associatedtype Element
+    
+    typealias E = Element
+    
+    func asObservable() -> MGLObservable<Element>
+}
+
 //extension OBJAddressProtocol {
 //    func toRawPointer() -> UnsafeMutableRawPointer {
 //        let pointer = Unmanaged.passUnretained(Self.Type).toOpaque()
