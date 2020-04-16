@@ -23,6 +23,11 @@ class Fruit {
         return "this is fruit2"
     }
     
+    // fatalError 触发错误
+    class func fatatErr() {
+        fatalError("message change KimDocsMessageViewModel failed")
+    }
+    
     // 获取对象的地址 refrence object address
     func toRawPointer() -> UnsafeMutableRawPointer {
         let pointer = Unmanaged.passUnretained(self).toOpaque()
