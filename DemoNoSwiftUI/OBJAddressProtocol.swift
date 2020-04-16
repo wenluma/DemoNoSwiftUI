@@ -12,6 +12,10 @@ protocol OBJAddressProtocol {
     func toRawPointer() -> UnsafeMutableRawPointer
 }
 
+public class MGLObservable<Element> {
+    
+}
+
 //extension OBJAddressProtocol {
 //    func toRawPointer() -> UnsafeMutableRawPointer {
 //        let pointer = Unmanaged.passUnretained(Self.Type).toOpaque()
