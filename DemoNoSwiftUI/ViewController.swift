@@ -50,6 +50,11 @@ class ViewController: UIViewController {
         imgv.sizeToFit()
         imgv.center = CGPoint(x: 50, y: 200);
         
+        
+//        bottom， right -x < 0 内偏移
+//        make.bottom.equalTo(descriptionLabel.snp.bottom).offset(-8)
+
+        
     }
     
     /// frame 的修改 右上 -》 左下
