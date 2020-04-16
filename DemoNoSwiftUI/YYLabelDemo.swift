@@ -22,7 +22,9 @@ func getYYLabel(str: String, font: UIFont = .boldSystemFont(ofSize: 16), maxWidt
     label.numberOfLines = 0
     label.frame = rect
 //    label.frame = CGRect(x:0, y:0, width: maxWidth, height: 0) 设置之后，居然 frame 0 了，不合理
-    label.sizeToFit()
+//    label.sizeToFit()
+    label.sizeThatFits(rect.size)
+    
     label.backgroundColor = .orange
 
     print("|str:\(str) |rect: \(rect) |frame: \(label.frame)")

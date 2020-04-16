@@ -171,17 +171,17 @@ class ViewController: UIViewController {
     }
     
     func rich0() {
-        let str = "哈哈哦" // YYLabel 的高度设定， 跟 系统的计算，YYLabel 不同
-        let label = getYYLabel(str: str, maxWidth: 150)
+        let str = "新建群聊来测吧，老的群聊，是走的kim自建数据来创建的，现在的数据切到corehr数据了，测试环境很多账号都没有，问题确实存在" // YYLabel 的高度设定， 跟 系统的计算，YYLabel 不同
+        let label = getYYLabel(str: str, maxWidth: 260.0)
         view.addSubview(label)
-        label.center = CGPoint(x:250, y:150);
+        label.center = CGPoint(x:250, y:500);
     }
     
     func rich1() {
-        let str = "abdsgewg@23"
-        let label = getYYLabel(str: str, maxWidth: 150)
+        let str = "@张涛(18401564075)  现在拿到的群成员数量不对， 通过群拿到的user也缺失，这个可以怎么解决一下么？"
+        let label = getYYLabel(str: str, maxWidth: 260.0)
         view.addSubview(label)
-        label.center = CGPoint(x:250, y:100);
+        label.center = CGPoint(x:250, y:650);
     }
     
     func rich2() {

@@ -80,6 +80,6 @@ extension NSAttributedString {
 //        return textLayout.textBoundingRect
         
         // 系统的高度计算 emoji 表情差的比较多
-        return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: [NSStringDrawingOptions.usesLineFragmentOrigin, .usesFontLeading], context: nil)
     }
 }
