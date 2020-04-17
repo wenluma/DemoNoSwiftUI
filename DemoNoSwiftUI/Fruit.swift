@@ -38,12 +38,19 @@ class Fruit {
 class Apple: Fruit {
     var address: String
     
+    // pubic get， private set 非常好
+    public private(set) var time: Float32
+    
+    // public get ，private set， 这个方法666 的
+    public private(set) static var stone: Int = 6
+
 //    static var drink : Bool {
 //        return false
 //    }
 
     override init(name: String) {
         address = "china" // 先本类属性，在super 属性
+        time = 0.5
         super.init(name: name)
     }
     
