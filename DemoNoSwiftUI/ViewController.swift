@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     var btn2 : UIButton?
     var isOpen2 : Bool = false
 
+    private lazy var firstLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
