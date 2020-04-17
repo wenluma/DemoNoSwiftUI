@@ -25,6 +25,21 @@ class ViewController: UIViewController {
         return view
     }()
     
+    
+    private lazy var textField: UITextField = {
+        let textFV = UITextField()
+        
+        // 左边距 1
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.frame = CGRect(x: 0, y: 0, width: 10, height: 1)
+        textFV.leftViewMode = .always
+        textFV.leftView = view
+        // 边距2 ，UITextField 子类 重写， 继承设定 rect 相关的方法
+        
+        return textFV
+    }()
+    
     // 创建圆角， uiimageview 的圆角，已经进行了优化，不会触发离屏渲染
     lazy var verticalLineView: UIImageView = {
         let verticalLineView = UIImageView.init()
