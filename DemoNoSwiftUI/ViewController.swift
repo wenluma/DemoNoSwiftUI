@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         return view
     }()
     
+    // 创建圆角， uiimageview 的圆角，已经进行了优化，不会触发离屏渲染
+    lazy var verticalLineView: UIImageView = {
+        let verticalLineView = UIImageView.init()
+        verticalLineView.layer.cornerRadius = 1.0
+        verticalLineView.clipsToBounds = true
+        verticalLineView.backgroundColor = .red
+        return verticalLineView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
