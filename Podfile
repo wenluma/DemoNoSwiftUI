@@ -6,3 +6,7 @@ target 'DemoNoSwiftUI' do
     pod 'SnapKit', '~> 5.0.0'
     pod 'YYText'
 end
+
+target 'DemoNoSwiftUITests' do
+  pod 'YYText'
+end
