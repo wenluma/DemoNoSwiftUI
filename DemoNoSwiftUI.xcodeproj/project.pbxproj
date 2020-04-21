@@ -16,6 +16,8 @@
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
+		8EB628EF244D7A340083B322 /* SubStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB628EE244D7A340083B322 /* SubStringTests.swift */; };
+		8EB628F0244D7A6B0083B322 /* MGLStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */; };
 		8EDF53222440222600517EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53212440222600517EAE /* AppDelegate.swift */; };
 		8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53232440222600517EAE /* SceneDelegate.swift */; };
 		8EDF53262440222600517EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53252440222600517EAE /* ViewController.swift */; };
@@ -26,6 +28,7 @@
 		8EDF53442440222800517EAE /* DemoNoSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53432440222800517EAE /* DemoNoSwiftUIUITests.swift */; };
 		8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */; };
 		8EF1E415244935EC00323FAC /* MGLUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */; };
+		90E9EDF0C34F9578BDD05D38 /* Pods_DemoNoSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A48EBD8EB17AB3DEF1A88FE /* Pods_DemoNoSwiftUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		0AAD1EB94E57810EE56C88CC /* Pods_DemoNoSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoNoSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A48EBD8EB17AB3DEF1A88FE /* Pods_DemoNoSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoNoSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31F5F6CEC00C838836C17845 /* Pods-DemoNoSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNoSwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5DD4DE8ADFD917DF8C4FA6FE /* Pods-DemoNoSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNoSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E1C5E2524419BF1005CBACA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLStringEx.swift; sourceTree = "<group>"; };
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
+		8EB628EE244D7A340083B322 /* SubStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubStringTests.swift; sourceTree = "<group>"; };
 		8EDF531E2440222600517EAE /* DemoNoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoNoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDF53212440222600517EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EDF53232440222600517EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E9EDF0C34F9578BDD05D38 /* Pods_DemoNoSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0AAD1EB94E57810EE56C88CC /* Pods_DemoNoSwiftUI.framework */,
+				2A48EBD8EB17AB3DEF1A88FE /* Pods_DemoNoSwiftUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,6 +122,8 @@
 			children = (
 				B8841388C25EF7CBD3983115 /* Pods-DemoNoSwiftUI.debug.xcconfig */,
 				ADEDE65026F7F05B39B748E3 /* Pods-DemoNoSwiftUI.release.xcconfig */,
+				5DD4DE8ADFD917DF8C4FA6FE /* Pods-DemoNoSwiftUITests.debug.xcconfig */,
+				31F5F6CEC00C838836C17845 /* Pods-DemoNoSwiftUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8EDF53382440222800517EAE /* DemoNoSwiftUITests.swift */,
+				8EB628EE244D7A340083B322 /* SubStringTests.swift */,
 				8EDF533A2440222800517EAE /* Info.plist */,
 			);
 			path = DemoNoSwiftUITests;
@@ -206,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EDF534B2440222800517EAE /* Build configuration list for PBXNativeTarget "DemoNoSwiftUITests" */;
 			buildPhases = (
+				7186FA9D1C88F68B45917B69 /* [CP] Check Pods Manifest.lock */,
 				8EDF53302440222800517EAE /* Sources */,
 				8EDF53312440222800517EAE /* Frameworks */,
 				8EDF53322440222800517EAE /* Resources */,
+				D41F905B2D37DC331E2F2543 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +345,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7186FA9D1C88F68B45917B69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoNoSwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AFB26C26811F3806A22199ED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +382,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoNoSwiftUI/Pods-DemoNoSwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D41F905B2D37DC331E2F2543 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -374,7 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB628F0244D7A6B0083B322 /* MGLStringEx.swift in Sources */,
 				8EDF53392440222800517EAE /* DemoNoSwiftUITests.swift in Sources */,
+				8EB628EF244D7A340083B322 /* SubStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +629,7 @@
 		};
 		8EDF534C2440222800517EAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DD4DE8ADFD917DF8C4FA6FE /* Pods-DemoNoSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -595,6 +651,7 @@
 		};
 		8EDF534D2440222800517EAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31F5F6CEC00C838836C17845 /* Pods-DemoNoSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

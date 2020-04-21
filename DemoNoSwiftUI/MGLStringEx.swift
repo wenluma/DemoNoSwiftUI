@@ -84,7 +84,9 @@ extension NSAttributedString {
     }
 }
 
+//    https://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift
 extension String {
+    
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
@@ -103,6 +105,27 @@ extension String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
         return String(self[startIndex..<endIndex])
+    }
+    
+//    let s = "hello"
+//    s[0..<3] // "hel"
+//    s[3...]  // "lo"
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        let end = index(start, offsetBy: min(self.count - range.lowerBound,
+                                             range.upperBound - range.lowerBound))
+        return String(self[start..<end])
+    }
+    
+    subscript (r: CountableClosedRange<Int>) -> String {
+      let startIndex =  self.index(self.startIndex, offsetBy: r.lowerBound)
+      let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound)
+      return String(self[startIndex...endIndex])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+         return String(self[start...])
     }
 }
 
