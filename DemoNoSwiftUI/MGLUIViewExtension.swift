@@ -234,6 +234,8 @@ extension UIScrollView {
 }
 
 extension UIView {
+//    https://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority
+    
     // 抵抗使其变大， 内缩， less， <
     func mgl_setVerticalContentHugging(with priority :UILayoutPriority) -> Void {
         setContentHuggingPriority(priority, for: .vertical)
