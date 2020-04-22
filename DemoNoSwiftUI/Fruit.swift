@@ -35,6 +35,13 @@ class Fruit {
     }
 }
 
+extension Fruit: CustomStringConvertible {
+    // 动态类型。Self.self
+    var description: String {
+        return "self: \(Self.self)| name: \(name)"
+    }
+}
+
 class Apple: Fruit {
     var address: String
     
