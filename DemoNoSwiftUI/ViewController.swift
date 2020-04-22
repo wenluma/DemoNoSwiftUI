@@ -195,6 +195,7 @@ class ViewController: UIViewController {
         print("Apple.drink = \(Apple.drink)")
 
         let makeAddress = (apple as! Apple).address
+        print(apple is Apple)
         print(makeAddress)
         print(apple.toRawPointer())
         
