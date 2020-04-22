@@ -232,3 +232,39 @@ extension UIScrollView {
         self.setContentOffset(bottomOffset, animated: animated)
     }
 }
+
+extension UIView {
+    // 抵抗使其变大， 内缩， less， <
+    func mgl_setVerticalContentHugging(with priority :UILayoutPriority) -> Void {
+        setContentHuggingPriority(priority, for: .vertical)
+    }
+    
+    func mgl_verticalContentHugging() -> UILayoutPriority {
+        return contentHuggingPriority(for: .vertical)
+    }
+    
+    func mgl_setHorizontalContentHugging(with priority :UILayoutPriority) -> Void {
+        setContentHuggingPriority(priority, for: .horizontal)
+    }
+    
+    func mgl_horizontalContentHugging() -> UILayoutPriority {
+        return contentHuggingPriority(for: .horizontal)
+    }
+    
+    // 抵抗使其变小， 外推， large, >
+    func mgl_setHorizontalContentCompressionResistance(with priority :UILayoutPriority) -> Void {
+        setContentCompressionResistancePriority(priority, for: .horizontal)
+    }
+    
+    func mgl_horizontalContentCompressionResistance(with priority :UILayoutPriority) -> UILayoutPriority {
+        return contentCompressionResistancePriority(for: .horizontal)
+    }
+    
+    func mgl_setVerticalContentCompressionResistance(with priority :UILayoutPriority) -> Void {
+        setContentCompressionResistancePriority(priority, for: .vertical)
+    }
+    
+    func mgl_verticalContentCompressionResistance(with priority :UILayoutPriority) -> UILayoutPriority {
+        return contentCompressionResistancePriority(for: .vertical)
+    }
+}
