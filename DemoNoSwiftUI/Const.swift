@@ -25,3 +25,21 @@ let f2 = floor(0.1) // 0 向下取整
     import Cocoa
     typealias OSApplication = NSApplication
 #endif
+
+enum Event<T> {
+    case next(T)
+    case error(Error)
+    case completed
+}
+
+func handleEvent() {
+    let event = Event.next((1.0, 0))
+    
+    switch event {
+    case let .next((padding, number)):
+        print(padding)
+        print(number)
+    case .error(_): break
+    case .completed: break
+    }
+}
