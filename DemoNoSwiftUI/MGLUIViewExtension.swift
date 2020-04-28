@@ -20,6 +20,16 @@ extension UIView {
             frame = CGRect(x: newValue, y: rect.origin.y, width: rect.width, height: rect.height)
         }
     }
+    // 指定 右边界
+    var kim_maxX: CGFloat {
+        get {
+            frame.maxX
+        }
+        set {
+            let rect = frame
+            frame = rect.offsetBy(dx: newValue - frame.maxX, dy: 0)
+        }
+    }
     
     var mgl_y: CGFloat {
         get {
@@ -28,6 +38,17 @@ extension UIView {
         set {
             let rect = frame
             frame = CGRect(x: rect.origin.x , y: newValue, width: rect.width, height: rect.height)
+        }
+    }
+    
+    // 指定 低边界
+    var kim_maxY: CGFloat {
+        get {
+            frame.maxY
+        }
+        set {
+            let rect = frame
+            frame = rect.offsetBy(dx: 0, dy: newValue - frame.maxY)
         }
     }
     
