@@ -81,6 +81,53 @@ class ViewController: UIViewController {
         imgv.center = CGPoint(x: 50, y: 200);
         
         
+        let layoutGuide1 = UILayoutGuide()
+        view.addLayoutGuide(layoutGuide1)
+        
+        let layoutGuide2 = UILayoutGuide()
+        view.addLayoutGuide(layoutGuide2)
+        
+        let redBtn = UIButton()
+        redBtn.backgroundColor = .red
+        view.addSubview(redBtn)
+        
+        let blueBtn = UIButton()
+        blueBtn.backgroundColor = .blue
+        view.addSubview(blueBtn)
+        
+        layoutGuide1.snp.makeConstraints { (make) in
+            make.top.equalTo(100)
+            make.leading.equalTo(10)
+            make.width.equalTo(80)
+            make.height.equalTo(100)
+        }
+        
+        redBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(layoutGuide1.snp.top)
+            make.leading.equalTo(layoutGuide1.snp.trailing).offset(10)
+            make.width.equalTo(layoutGuide1.snp.width)
+            make.height.equalTo(layoutGuide1.snp.height)
+        }
+        
+        layoutGuide2.snp.makeConstraints { (make) in
+            make.top.equalTo(layoutGuide1.snp.top)
+            make.leading.equalTo(redBtn.snp.trailing).offset(10)
+            make.width.equalTo(layoutGuide1.snp.width)
+            make.height.equalTo(layoutGuide1.snp.height)
+        }
+        
+        blueBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(layoutGuide1.snp.top)
+            make.leading.equalTo(layoutGuide2.snp.trailing).offset(10)
+            make.width.equalTo(layoutGuide1.snp.width)
+            make.height.equalTo(layoutGuide1.snp.height)
+        }
+        
+        
+        
+        
+        
+        
 //        bottom， right -x < 0 内偏移
 //        make.bottom.equalTo(descriptionLabel.snp.bottom).offset(-8)
 
