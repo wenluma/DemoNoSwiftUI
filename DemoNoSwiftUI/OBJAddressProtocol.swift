@@ -9,7 +9,9 @@
 import Foundation
 
 protocol OBJAddressProtocol {
+    associatedtype Element
     func toRawPointer() -> UnsafeMutableRawPointer
+    func log(e: Element)
 }
 
 public class MGLObservable<Element> {
