@@ -376,6 +376,26 @@ class ViewController: UIViewController {
             print("tap: ...")
         }
     }
+    
+    // label 结尾字符串处理 ... 中英文都ok， YYLabel 是有问题的，中英文混写
+    func labelTail() {
+        let tap  = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        
+        let lab = UILabel(frame: .zero)
+        lab.numberOfLines = 1
+        lab.lineBreakMode = .byTruncatingTail
+        view.addSubview(lab)
+        lab.backgroundColor = .purple
+        lab.attributedText = NSAttributedString(string: "中helloworldyouzheghoasdgoalfasdasdfasf")
+        
+        lab.snp.makeConstraints { (make) in
+            make.top.equalTo(100)
+            make.leading.equalTo(150)
+            make.trailing.equalTo(-150)
+            make.height.equalTo(20)
+        }
+    }
 }
 
 // 加锁， 解锁操作
