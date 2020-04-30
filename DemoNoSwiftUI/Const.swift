@@ -43,3 +43,19 @@ func handleEvent() {
     case .completed: break
     }
 }
+
+public protocol MGLError: Error {
+    
+}
+
+extension Error {
+    
+    public func asMGLError(orFailWith message: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) -> MGLError {
+        guard let mglError = self as? MGLError else {
+            fatalError(message(), file: file, line: line)
+        }
+        return mglError
+    }
+}
+
+
