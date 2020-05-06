@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import YYText
 
+// MARK: attribute
 extension String {
     func toAttribute(color: UIColor) -> NSAttributedString {
 //        let ranage = NSRange(location: 0, length: self.count) // 获取字符串的range
@@ -84,9 +85,14 @@ extension NSAttributedString {
     }
 }
 
+// MARK: - sub string by index
 //    https://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift
 extension String {
     
+    func allRange() -> NSRange {
+//        return NSRange(self.startIndex...self.endIndex, in: self)
+        return NSMakeRange(0, self.count)
+    }
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
@@ -129,3 +135,23 @@ extension String {
     }
 }
 
+// MARK: regular
+extension String {
+    func isPhone() -> Bool {
+        do {
+//            let pattern = "+?\\d{3,5} ?-? ?\\d{5,18}"
+//            let pattern = "+??[0-9]{3,5}"
+            let pattern = "(\\d{5}|\\+?\\d{2,5}( {0,2}-?)(( {0,2}\\d{2,5}){2,5}))"
+            let expression = try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
+            let times = expression.numberOfMatches(in: self, options: .reportProgress, range: self.allRange())
+            if (times > 0) {
+                print("times: \(times)")
+                return true
+            }
+            return false
+        } catch {
+            fatalError("try failed")
+            return false
+        }
+    }
+}
