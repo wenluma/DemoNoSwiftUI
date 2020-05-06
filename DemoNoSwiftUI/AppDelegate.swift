@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // 异常crash 捕获 https://stackoverflow.com/questions/36325140/how-to-catch-a-swift-crash-and-do-some-logging
 //         https://developer.apple.com/library/archive/technotes/tn2151/_index.html#//apple_ref/doc/uid/DTS40008184-CH1-ANALYZING_CRASH_REPORTS-EXCEPTION_CODES
+//  视频debug       https://developer.apple.com/videos/play/wwdc2018/414/
         NSSetUncaughtExceptionHandler { (exception) in
             let stack = exception.callStackReturnAddresses
             print("Stack trace: \(stack)")
