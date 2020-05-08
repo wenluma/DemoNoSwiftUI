@@ -13,6 +13,7 @@
 		8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */; };
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
+		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
@@ -59,6 +60,7 @@
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
 		8E1C5EA02445982F005CBACA /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
+		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				8E1C5E2524419BF1005CBACA /* Const.swift */,
 				8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */,
 				8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */,
+				8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */,
 				8E1C5EA02445982F005CBACA /* Fruit.swift */,
 				8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
@@ -423,6 +426,7 @@
 				8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */,
 				8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */,
 				8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */,
+				8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */,
 				8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
