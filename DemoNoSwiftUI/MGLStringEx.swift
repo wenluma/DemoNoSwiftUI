@@ -70,18 +70,33 @@ extension NSAttributedString {
         if (self.length < 1) {
             return CGRect.zero
         }
-        // YYLabel 的高度计算， emoji 表情的比较准
-//        let container = YYTextContainer.init()
-//        container.size = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
-//        container.maximumNumberOfRows = numberOfRows
-//
-//        guard let textLayout = YYTextLayout.init(container: container, text: self) else {
-//            return CGRect.zero
-//        }
-//        return textLayout.textBoundingRect
         
-        // 系统的高度计算 emoji 表情差的比较多
-        return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: [NSStringDrawingOptions.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        // YYLabel 的高度计算， emoji 表情的比较准
+        let container = YYTextContainer.init()
+        container.size = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
+        container.maximumNumberOfRows = numberOfRows
+
+        guard let textLayout = YYTextLayout.init(container: container, text: self) else {
+            return CGRect.zero
+        }
+        
+        let rect = textLayout.textBoundingRect
+        let width = min(rect.width, maxWidth)// 空格太多的异常问题
+        return CGRect(x: rect.origin.x, y: rect.origin.y, width: width, height: rect.height)
+        
+//        // 系统的高度计算 emoji 表情差的比较多
+//        return self.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: [NSStringDrawingOptions.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+    }
+    
+    
+    /// 输入字符串，获取对应的 size 大小
+    /// - Parameters:
+    ///   - maxWidth: 设置最大宽度
+    ///   - numberOfLines: 行数， 默认0， 代表不限制行数
+    /// - Returns: 返回计算后的大小
+    func yy_getAttrSize(maxWidth: CGFloat, numberOfLines: UInt = 0) -> CGSize {
+        let rect = yy_getAttrRect(maxWidth: maxWidth, numberOfRows: numberOfLines)
+        return rect.size
     }
 }
 
