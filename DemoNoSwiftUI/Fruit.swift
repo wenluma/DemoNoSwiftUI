@@ -14,6 +14,14 @@ class Fruit {
     init(name: String) {
         self.name = name
     }
+    
+    func logs() {
+        // 可以设定跳步间隔
+        for index in stride(from: 1, to: 10, by: 2) {
+            print(index)
+        }
+    }
+    
     // 类方法 static class 是一样的效果
     static func intro() -> String {
         return "this is fruit"

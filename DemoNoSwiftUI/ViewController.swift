@@ -236,6 +236,7 @@ class ViewController: UIViewController {
 
         let apple: Fruit = Apple(name: "apple")
         Fruit.intro()
+        apple.logs()
         Fruit.drink = false
         print("fruit.drink = \(Fruit.drink)")
         Apple.drink = true
