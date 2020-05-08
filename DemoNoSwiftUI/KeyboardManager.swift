@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+    static let myKeyboardWillShow = Notification.Name("my.keybarod.willShow")
+}
+
 class KeyboardManager {
     // pubic get, private set
     private(set) var inputView: UIInputView?
