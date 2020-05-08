@@ -170,3 +170,20 @@ extension String {
         }
     }
 }
+
+//MARK: - url decode/encode
+extension String {
+    
+    /// string 进行url编码
+    /// - Returns: 编码后的string
+    func mgl_urlEncode() -> String? {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+    
+    /// string 进行url解码
+    /// - Returns: 解码后的string
+    func mgl_urlDecode() -> String? {
+        return self.removingPercentEncoding
+    }
+    
+}
