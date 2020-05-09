@@ -22,6 +22,22 @@ class Fruit {
         }
     }
     
+    // 可变数目的参数
+    func sum(numbers: Int...) -> Int {
+        var sum = 0
+        for num in numbers {
+            sum += num
+        }
+        return sum
+    }
+    
+    // 交换左右, 输入必须是 var
+    func swap(lhs: inout Int, rhs: inout Int) {
+        let tmp = lhs
+        lhs = rhs
+        rhs = tmp
+    }
+    
     // 类方法 static class 是一样的效果
     static func intro() -> String {
         return "this is fruit"

@@ -242,6 +242,12 @@ class ViewController: UIViewController {
         Apple.drink = true
         print("Apple.drink = \(Apple.drink)")
 
+        let sum = apple.sum(numbers: 1,2,3)
+        print("sum: \(sum)")
+        var a = 1
+        var b = 2
+        apple.swap(lhs: &a, rhs: &b)
+        
         let makeAddress = (apple as! Apple).address
         print(apple is Apple)
         print(makeAddress)
