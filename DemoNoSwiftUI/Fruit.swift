@@ -91,3 +91,35 @@ class Apple: Fruit {
         return "this is apple"
     }
 }
+
+//https://stackoverflow.com/questions/24171814/can-associated-values-and-raw-values-coexist-in-swift-enumeration
+//Can associated values and raw values coexist in Swift enumeration?
+
+enum Barcode {
+    case UPCA(Int, Int, Int)
+    case QRCode(String)
+}
+
+extension Barcode: RawRepresentable {
+
+    public typealias RawValue = String
+
+    /// Failable Initalizer
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "Order 1":  self = .UPCA(1,1,1)
+        case "Order 2":  self = .QRCode("foo")
+        default:
+            return nil
+        }
+    }
+
+    /// Backing raw value
+    public var rawValue: RawValue {
+        switch self {
+        case .UPCA:     return "Order 1"
+        case .QRCode:   return "Order 2"
+        }
+    }
+
+}
