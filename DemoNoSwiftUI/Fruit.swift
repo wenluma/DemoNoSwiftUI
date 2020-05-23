@@ -114,6 +114,10 @@ extension Barcode: RawRepresentable {
         }
     }
 
+    func invoke(vm: () -> Void) {
+        vm()
+    }
+    
     /// Backing raw value
     public var rawValue: RawValue {
         switch self {
