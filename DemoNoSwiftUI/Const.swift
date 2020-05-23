@@ -12,6 +12,10 @@ import UIKit
 // 声明常量
 public let kDuration = 0.3
 
+let SCREEN_BOUNDS = UIScreen.main.bounds
+let SCREEN_WIDTH = SCREEN_BOUNDS.width
+let SCREEN_HEIGHT = SCREEN_BOUNDS.height
+
 // 内部可见
 private let kVersion = "0.1.0"
 

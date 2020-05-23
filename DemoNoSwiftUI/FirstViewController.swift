@@ -17,11 +17,27 @@ class FirstViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  lazy var scrollview: ZoomScrollView = {
+    let sv = ZoomScrollView()
+    return sv
+  }()
+  
   let imgV = UIImageView(image: UIImage(named: "008"))
   
   override func viewDidLoad() {
     super.viewDidLoad()
     log.debug(#file, #function)
+    view.addSubview(scrollview)
+    scrollview.bind(zoomView: imgV)
+    imgV.frame = SCREEN_BOUNDS
+  }
+  
+  override func updateViewConstraints() {
+    super.updateViewConstraints()
+    log.debug(#file, #function)
+    scrollview.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
