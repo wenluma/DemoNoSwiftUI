@@ -255,7 +255,11 @@ class ViewController: UIViewController {
         
     }
     
-    func rich0() {
+  @IBAction func gotoScrollVC(_ sender: Any) {
+    let vc =  CollectionViewController()
+    self.present(vc, animated: true, completion: nil)
+  }
+  func rich0() {
         let str = "1                                                                                                                                 \n2"
  // YYLabel 的高度设定， 跟 系统的计算，YYLabel 不同
         let label = getYYLabel(str: str, maxWidth: 160.0)
