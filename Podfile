@@ -7,6 +7,8 @@ target 'DemoNoSwiftUI' do
     pod 'YYText'
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
+    pod 'SwiftyBeaver'
+
 end
 
 target 'DemoNoSwiftUITests' do

@@ -10,6 +10,8 @@
 		4957718D4AAC4662DE50FD29 /* Pods_DemoNoSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAD1EB94E57810EE56C88CC /* Pods_DemoNoSwiftUI.framework */; };
 		8E11AFCA2478D43E0074AFD6 /* CollectionViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFC92478D43E0074AFD6 /* CollectionViewContoller.swift */; };
 		8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */; };
+		8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCD24791B930074AFD6 /* FirstViewController.swift */; };
+		8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */; };
 		8E1C5E2624419BF1005CBACA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2524419BF1005CBACA /* Const.swift */; };
 		8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */; };
 		8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */; };
@@ -60,6 +62,8 @@
 		5DD4DE8ADFD917DF8C4FA6FE /* Pods-DemoNoSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNoSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoNoSwiftUITests/Pods-DemoNoSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E11AFC92478D43E0074AFD6 /* CollectionViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewContoller.swift; sourceTree = "<group>"; };
 		8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollZoom.swift; sourceTree = "<group>"; };
+		8E11AFCD24791B930074AFD6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8E1C5E2524419BF1005CBACA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLStringEx.swift; sourceTree = "<group>"; };
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				8EDF53232440222600517EAE /* SceneDelegate.swift */,
 				8EDF53252440222600517EAE /* ViewController.swift */,
 				8E11AFC92478D43E0074AFD6 /* CollectionViewContoller.swift */,
+				8E11AFCD24791B930074AFD6 /* FirstViewController.swift */,
+				8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -426,12 +432,14 @@
 				8EDF53262440222600517EAE /* ViewController.swift in Sources */,
 				8E11AFCA2478D43E0074AFD6 /* CollectionViewContoller.swift in Sources */,
 				8E1C5E2624419BF1005CBACA /* Const.swift in Sources */,
+				8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */,
 				8EDF53222440222600517EAE /* AppDelegate.swift in Sources */,
 				8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */,
 				8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */,
 				8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */,
 				8E1C5EA124459830005CBACA /* Fruit.swift in Sources */,
 				8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */,
+				8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
