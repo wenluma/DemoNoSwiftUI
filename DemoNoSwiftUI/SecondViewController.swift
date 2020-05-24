@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, ScrollWithZoomProtocol {
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
@@ -17,8 +17,19 @@ class SecondViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  func bindOutScrollView(outScrollView: UIScrollView) {
+    self.outScrollView = outScrollView
+  }
+
+  weak var outScrollView: UIScrollView?
+
   lazy var scrollview: ZoomScrollView = {
     let sv = ZoomScrollView()
+    sv.isZoomingReply.subscribe { [weak self] (event) in
+      if let self = self, case let .next(isZooming) = event {
+        self.outScrollView?.isScrollEnabled = !isZooming
+      }
+    }
     return sv
   }()
   
@@ -26,15 +37,18 @@ class SecondViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    log.debug(#file, #function)
+    LOG_DEBUG()
+
     view.addSubview(scrollview)
     scrollview.bind(zoomView: imgV)
     imgV.frame = SCREEN_BOUNDS
+    
+    view.setNeedsUpdateConstraints()
   }
   
   override func updateViewConstraints() {
     super.updateViewConstraints()
-    log.debug(#file, #function)
+    LOG_DEBUG()
     scrollview.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
@@ -42,20 +56,20 @@ class SecondViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    log.debug(#file, #function)
+    LOG_DEBUG()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    log.debug(#file, #function)
+    LOG_DEBUG()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    log.debug(#file, #function)
+    LOG_DEBUG()
   }
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    log.debug(#file, #function)
+    LOG_DEBUG()
   }
 }

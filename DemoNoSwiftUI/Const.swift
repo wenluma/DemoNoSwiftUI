@@ -22,6 +22,11 @@ private let kVersion = "0.1.0"
 let f1 = ceil(0.1) // 1 向上取整
 let f2 = floor(0.1) // 0 向下取整
 
+func LOG_DEBUG(file: String = #file, funcname: String = #function, line: Int = #line ,_ message: String = "") {
+  let msg = String(file.split(separator: "/").last!) + ", " + funcname + " line:\(line) " + message
+  log.debug(msg)
+}
+
 #if os(iOS)
     import UIKit
     typealias OSApplication = UIApplication

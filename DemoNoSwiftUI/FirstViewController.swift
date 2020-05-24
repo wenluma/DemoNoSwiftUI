@@ -8,7 +8,19 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+protocol ScrollWithZoomProtocol {
+  
+  func bindOutScrollView(outScrollView: UIScrollView)
+  
+}
+
+
+class FirstViewController: UIViewController, ScrollWithZoomProtocol {
+  
+  func bindOutScrollView(outScrollView: UIScrollView) {
+    self.outScrollView = outScrollView
+  }
+  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
@@ -16,6 +28,8 @@ class FirstViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  weak var outScrollView: UIScrollView?
   
   lazy var scrollview: ZoomScrollView = {
     let sv = ZoomScrollView()
@@ -26,15 +40,19 @@ class FirstViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    log.debug(#file, #function)
+    LOG_DEBUG()
+
     view.addSubview(scrollview)
     scrollview.bind(zoomView: imgV)
     imgV.frame = SCREEN_BOUNDS
+    
+    view.setNeedsUpdateConstraints()
   }
   
   override func updateViewConstraints() {
     super.updateViewConstraints()
-    log.debug(#file, #function)
+        LOG_DEBUG()
+
     scrollview.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
@@ -42,20 +60,24 @@ class FirstViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    log.debug(#file, #function)
+        LOG_DEBUG()
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    log.debug(#file, #function)
+        LOG_DEBUG()
+
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    log.debug(#file, #function)
+        LOG_DEBUG()
+
   }
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    log.debug(#file, #function)
+        LOG_DEBUG()
+
   }
 }
