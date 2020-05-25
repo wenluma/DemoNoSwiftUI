@@ -27,6 +27,11 @@ func LOG_DEBUG(file: String = #file, funcname: String = #function, line: Int = #
   log.debug(msg)
 }
 
+func CLOG_DEBUG(_ message: String = "") {
+  log.debug(message)
+}
+
+
 #if os(iOS)
     import UIKit
     typealias OSApplication = UIApplication

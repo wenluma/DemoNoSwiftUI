@@ -28,7 +28,7 @@ class CollectionZoomCell: UICollectionViewCell, UIScrollViewDelegate {
     sv.backgroundColor = .yellow
     return sv
   }()
-    
+  
   lazy var imageView: UIImageView = {
     let imgV = UIImageView()
     return imgV
@@ -76,107 +76,105 @@ class ZoomVCCollectionCell: UICollectionViewCell {
 typealias VCT = (hasAdded: Bool, vc: UIViewController & ScrollWithZoomProtocol)
 
 class CollectionViewController: UIViewController,
-//  UICollectionViewDelegateFlowLayout,
-UICollectionViewDelegate,
-UICollectionViewDataSource,
+  UICollectionViewDelegate,
+  UICollectionViewDataSource,
 UIScrollViewDelegate  {
+  
+  struct LifyCycleRecord {
+    var start: IndexPath?
+    var appear: IndexPath?
+    var disappear: IndexPath?
+    var end: IndexPath?
+    var enabled: Bool?
+    var isFirstLoad: Bool = true
+    
+    // except isFirstLoa ,reset others
+    mutating func reset() {
+      start = nil
+      appear = nil
+      disappear = nil
+      end = nil
+      enabled = nil
+    }
+  }
+  
   var zoomDisposable: Disposable?
   let imgNames = ["008", "009"]
   
-  private var isFirstLoad = true
+  private var record: LifyCycleRecord = LifyCycleRecord()
   
   lazy var myvcs: [VCT] = {
     let first = FirstViewController()
     let second = SecondViewController()
     return [(false, first), (false, second)]
   }()
-
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//    return imgNames.count;
+    //    return imgNames.count;
     return myvcs.count
   }
   
-  func getVC(from indexPath: IndexPath) -> UIViewController {
-    myvcs[indexPath.row].vc
-  }
-  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoom", for: indexPath) as! CollectionZoomCell
-//    let img = UIImage(named: imgNames[indexPath.row])
-//    cell.imageView.image = img
-//    zoomDisposable?.dispose()
-//    zoomDisposable = cell.scrollview.isZoomingReply.subscribe { (event) in
-//      if case let .next(isZooming) = event {
-//        collectionView.isScrollEnabled = !isZooming
-//        print("collectionview is scrollEnabled = \(collectionView.isScrollEnabled)")
-//      }
-//    }
-
+    //    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoom", for: indexPath) as! CollectionZoomCell
+    //    let img = UIImage(named: imgNames[indexPath.row])
+    //    cell.imageView.image = img
+    //    zoomDisposable?.dispose()
+    //    zoomDisposable = cell.scrollview.isZoomingReply.subscribe { (event) in
+    //      if case let .next(isZooming) = event {
+    //        collectionView.isScrollEnabled = !isZooming
+    //        print("collectionview is scrollEnabled = \(collectionView.isScrollEnabled)")
+    //      }
+    //    }
+    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoomvc", for: indexPath) as! ZoomVCCollectionCell
     LOG_DEBUG("\(indexPath.row)")
-
     return cell
   }
   
-  var willDisplayIndexPath: IndexPath?
-  var endDisplayIndexPath: IndexPath?
-
-  var willDisAppearIndexPath: IndexPath?
-  
-  
   func bindVCAndDisplay(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    LOG_DEBUG("\(indexPath.row)")
-
-    willDisplayIndexPath = indexPath
-    
-    let mCell = cell as! ZoomVCCollectionCell
-    let vc = myvcs[indexPath.row].vc
-    
-    self.addChild(vc)
-    //... add child vc
-    mCell.bindVC(vc: vc)
-    
-    vc.beginAppearanceTransition(true, animated: false)
-    LOG_DEBUG("\(indexPath.row)")
-    if isFirstLoad {
-      willDisplayIndexPath = nil
-      isFirstLoad = false
+    if record.isFirstLoad {
+      record.isFirstLoad = false
+      let mCell = cell as! ZoomVCCollectionCell
+      let vc = myvcs[indexPath.row].vc
+      self.addChild(vc)
+      //... add child vc
+      mCell.bindVC(vc: vc)
+      vc.beginAppearanceTransition(true, animated: false)
+      LOG_DEBUG("\(indexPath.row)")
       vc.didMove(toParent: self)
       vc.endAppearanceTransition()
       LOG_DEBUG("\(indexPath.row)")
+    } else {
+      record.enabled = true
+      record.appear = indexPath
     }
   }
   
   override var shouldAutomaticallyForwardAppearanceMethods: Bool {
     return false
   }
-
+  
   func unbindVCAndDisapper(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    endDisplayIndexPath = indexPath
-    let _ = cell as! ZoomVCCollectionCell
-    let vc = myvcs[indexPath.row].vc
+    record.disappear = indexPath
+    record.enabled = false
+//    let _ = cell as! ZoomVCCollectionCell
+//    let vc = myvcs[indexPath.row].vc
+//
+//    vc.beginAppearanceTransition(false, animated: false)
+//    vc.willMove(toParent: nil)
+//    // ... child vc remove from superview
+//    vc.view.removeFromSuperview()
     
-    LOG_DEBUG("\(indexPath.row)")
-
-    vc.beginAppearanceTransition(false, animated: false)
-
-    vc.willMove(toParent: nil)
-    // ... child vc remove from superview
-    vc.view.removeFromSuperview()
-    LOG_DEBUG("\(indexPath.row)")
   }
   
   // will disappear
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     bindVCAndDisplay(collectionView, willDisplay: cell, forItemAt: indexPath)
-    LOG_DEBUG("\(indexPath.row)")
   }
   
-  // diddisappera
+  // diddisappear
   func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     unbindVCAndDisapper(collectionView, didEndDisplaying: cell, forItemAt: indexPath)
-    LOG_DEBUG("\(indexPath.row)")
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -189,15 +187,21 @@ UIScrollViewDelegate  {
     }
   }
   
-  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    let offsetX = scrollView.contentOffset.x + scrollView.center.x
-    let offsetY = scrollView.contentOffset.y + scrollView.center.y
-    willDisAppearIndexPath = collectionView.indexPathForItem(at: CGPoint(x: offsetX, y: offsetY))
+  private func currentIndexPath(of collectionView: UICollectionView) -> IndexPath? {
+    let offsetX = collectionView.contentOffset.x + collectionView.center.x
+    let offsetY = collectionView.contentOffset.y + collectionView.center.y
+    return collectionView.indexPathForItem(at: CGPoint(x: offsetX, y: offsetY))
   }
-
+  
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    record.start = currentIndexPath(of :scrollView as! UICollectionView)
+  }
+  
   func stopScrollView(scrollView: UIScrollView) {
-    LOG_DEBUG("willindex = \(willDisplayIndexPath), endIndex = \(endDisplayIndexPath)")
-    if let willIndexPath = willDisplayIndexPath,
+    record.end = currentIndexPath(of: scrollView as! UICollectionView)
+    
+    record.reset()
+    if let willIndexPath = record.appear,
       let attributes = collectionView.layoutAttributesForItem(at: willIndexPath) {
       let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
       if self.view.frame.contains(toSuperCenter) {
@@ -211,7 +215,7 @@ UIScrollViewDelegate  {
       LOG_DEBUG("\(toSuperCenter)")
     }
     
-    if let endIndex = endDisplayIndexPath,
+    if let endIndex = record.end,
       let attributes = collectionView.layoutAttributesForItem(at: endIndex) {
       let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
       let vc = getVC(from: endIndex)
@@ -226,14 +230,14 @@ UIScrollViewDelegate  {
       LOG_DEBUG("\(toSuperCenter)")
     }
   }
-
+  
   lazy var collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
     flowLayout.itemSize = UIScreen.main.bounds.size
-//    flowLayout.minimumInteritemSpacing = 0
+    //    flowLayout.minimumInteritemSpacing = 0
     flowLayout.minimumLineSpacing = 0
-//    flowLayout.sectionInset = .zero
+    //    flowLayout.sectionInset = .zero
     let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
     cv.delegate = self
     cv.dataSource = self
@@ -242,12 +246,22 @@ UIScrollViewDelegate  {
     cv.register(CollectionZoomCell.self, forCellWithReuseIdentifier: "zoom")
     cv.register(ZoomVCCollectionCell.self, forCellWithReuseIdentifier: "zoomvc")
     cv.isPrefetchingEnabled = false
-
+    
     cv.backgroundColor = .systemBlue
     cv.isPagingEnabled = true
     return cv
   }()
- 
+  
+  private func getVC(from indexPath: IndexPath) -> UIViewController {
+    myvcs[indexPath.row].vc
+  }
+  
+  private func getVC(from collectionView: UICollectionView) -> UIViewController {
+    let indexPath = currentIndexPath(of: collectionView)!
+    return getVC(from: indexPath)
+  }
+  
+  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nil, bundle: nibBundleOrNil)
   }
