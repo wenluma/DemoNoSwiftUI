@@ -7,15 +7,13 @@
 //
 /*
  自定义 contain vc
- 
- https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html
+  https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html
  
  布局 collectionview  item space
  https://stackoverflow.com/questions/17229350/cell-spacing-in-uicollectionview
  */
 
 import Foundation
-
 import UIKit
 import SnapKit
 import RxSwift
