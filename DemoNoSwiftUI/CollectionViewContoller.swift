@@ -109,6 +109,7 @@ UIScrollViewDelegate  {
     return [(false, first), (false, second)]
   }()
   
+//  MARK: - collection view data source
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     //    return imgNames.count;
     return myvcs.count
@@ -130,6 +131,16 @@ UIScrollViewDelegate  {
     LOG_DEBUG("\(indexPath.row)")
     return cell
   }
+//  MARK: collectionview delegate willappear, disappear
+  // will disappear
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    bindVCAndDisplay(collectionView, willDisplay: cell, forItemAt: indexPath)
+  }
+  
+  // diddisappear
+  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    unbindVCAndDisapper(collectionView, didEndDisplaying: cell, forItemAt: indexPath)
+  }
   
   func bindVCAndDisplay(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     if record.isFirstLoad {
@@ -150,10 +161,6 @@ UIScrollViewDelegate  {
     }
   }
   
-  override var shouldAutomaticallyForwardAppearanceMethods: Bool {
-    return false
-  }
-  
   func unbindVCAndDisapper(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     record.disappear = indexPath
     record.enabled = false
@@ -166,15 +173,9 @@ UIScrollViewDelegate  {
 //    vc.view.removeFromSuperview()
     
   }
-  
-  // will disappear
-  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    bindVCAndDisplay(collectionView, willDisplay: cell, forItemAt: indexPath)
-  }
-  
-  // diddisappear
-  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    unbindVCAndDisapper(collectionView, didEndDisplaying: cell, forItemAt: indexPath)
+// MARK: scrollview delegate
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    record.start = currentIndexPath(of :scrollView as! UICollectionView)
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -191,10 +192,6 @@ UIScrollViewDelegate  {
     let offsetX = collectionView.contentOffset.x + collectionView.center.x
     let offsetY = collectionView.contentOffset.y + collectionView.center.y
     return collectionView.indexPathForItem(at: CGPoint(x: offsetX, y: offsetY))
-  }
-  
-  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    record.start = currentIndexPath(of :scrollView as! UICollectionView)
   }
   
   func stopScrollView(scrollView: UIScrollView) {
@@ -231,6 +228,7 @@ UIScrollViewDelegate  {
     }
   }
   
+//  MARK: - view controller
   lazy var collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
@@ -261,7 +259,6 @@ UIScrollViewDelegate  {
     return getVC(from: indexPath)
   }
   
-  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nil, bundle: nibBundleOrNil)
   }
@@ -282,4 +279,9 @@ UIScrollViewDelegate  {
       make.edges.equalToSuperview()
     }
   }
+  
+  override var shouldAutomaticallyForwardAppearanceMethods: Bool {
+    return false
+  }
+  
 }
