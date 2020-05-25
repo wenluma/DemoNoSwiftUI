@@ -41,7 +41,7 @@ class FirstViewController: UIViewController, ScrollWithZoomProtocol {
   override func viewDidLoad() {
     super.viewDidLoad()
     LOG_DEBUG()
-
+    
     view.addSubview(scrollview)
     scrollview.bind(zoomView: imgV)
     imgV.frame = SCREEN_BOUNDS
@@ -51,8 +51,7 @@ class FirstViewController: UIViewController, ScrollWithZoomProtocol {
   
   override func updateViewConstraints() {
     super.updateViewConstraints()
-        LOG_DEBUG()
-
+    LOG_DEBUG()
     scrollview.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
@@ -60,24 +59,21 @@ class FirstViewController: UIViewController, ScrollWithZoomProtocol {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-        LOG_DEBUG()
-
+    LOG_DEBUG()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-        LOG_DEBUG()
-
+    LOG_DEBUG()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-        LOG_DEBUG()
-
+    LOG_DEBUG()
   }
+  
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-        LOG_DEBUG()
-
+    LOG_DEBUG()
   }
 }

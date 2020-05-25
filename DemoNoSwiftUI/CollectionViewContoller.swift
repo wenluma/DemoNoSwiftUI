@@ -85,23 +85,77 @@ UIScrollViewDelegate  {
     var appear: IndexPath?
     var disappear: IndexPath?
     var end: IndexPath?
-    var enabled: Bool?
+    
+    var enabled: BehaviorRelay<Bool?> = BehaviorRelay(value: nil)
     var isFirstLoad: Bool = true
     
-    // except isFirstLoa ,reset others
+    // except isFirstLoad, enabled  ,reset others
     mutating func reset() {
       start = nil
       appear = nil
       disappear = nil
       end = nil
-      enabled = nil
+    }
+    
+    func isChanged() -> Bool {
+      guard enabled.value == true, let start = start, let disappear = disappear else {
+        return false
+      }
+      LOG_DEBUG("start.row = \(start.row), dis.row = \(disappear.row)")
+      return start == disappear
     }
   }
   
   var zoomDisposable: Disposable?
   let imgNames = ["008", "009"]
   
-  private var record: LifyCycleRecord = LifyCycleRecord()
+  
+  
+  private lazy var record: LifyCycleRecord = {
+    let record = LifyCycleRecord()
+    record.enabled.subscribe { [weak self]  (event) in
+      guard let self = self, case let .next(enabled) = event,  enabled == nil  else{
+        return
+      }
+      
+      func willAppear(vc: UIViewController) {
+        vc.beginAppearanceTransition(true, animated: false)
+      }
+      
+      func didAppear(vc: UIViewController) {
+        self.addChild(vc)
+        vc.didMove(toParent: self)
+        vc.endAppearanceTransition()
+      }
+      
+      func willDisappear(vc: UIViewController) {
+        vc.beginAppearanceTransition(false, animated: false)
+      }
+      
+      func didDisappear(vc: UIViewController) {
+        vc.willMove(toParent: nil)
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
+      }
+      
+      let startVC = self.getVC(from: self.record.start!)
+      let appearVC = self.getVC(from: self.record.appear!)
+      
+      if enabled == true {
+        willDisappear(vc: startVC)
+        willAppear(vc: appearVC)
+      } else {
+        if record.isChanged() {
+          didAppear(vc: appearVC)
+          didDisappear(vc: startVC)
+        } else {
+//          didAppear(vc: appearVC)
+//          didDisappear(vc: disappearVC)
+        }
+      }
+    }
+    return record
+  }()
   
   lazy var myvcs: [VCT] = {
     let first = FirstViewController()
@@ -128,7 +182,9 @@ UIScrollViewDelegate  {
     //    }
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoomvc", for: indexPath) as! ZoomVCCollectionCell
-    LOG_DEBUG("\(indexPath.row)")
+    let vc = myvcs[indexPath.row].vc
+    cell.bindVC(vc: vc)
+
     return cell
   }
 //  MARK: collectionview delegate willappear, disappear
@@ -156,14 +212,15 @@ UIScrollViewDelegate  {
       vc.endAppearanceTransition()
       LOG_DEBUG("\(indexPath.row)")
     } else {
-      record.enabled = true
+      record.enabled.accept(true)
       record.appear = indexPath
     }
   }
   
   func unbindVCAndDisapper(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     record.disappear = indexPath
-    record.enabled = false
+    record.enabled.accept(false)
+    
 //    let _ = cell as! ZoomVCCollectionCell
 //    let vc = myvcs[indexPath.row].vc
 //
@@ -171,8 +228,8 @@ UIScrollViewDelegate  {
 //    vc.willMove(toParent: nil)
 //    // ... child vc remove from superview
 //    vc.view.removeFromSuperview()
-    
   }
+  
 // MARK: scrollview delegate
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     record.start = currentIndexPath(of :scrollView as! UICollectionView)
@@ -197,7 +254,6 @@ UIScrollViewDelegate  {
   func stopScrollView(scrollView: UIScrollView) {
     record.end = currentIndexPath(of: scrollView as! UICollectionView)
     
-    record.reset()
     if let willIndexPath = record.appear,
       let attributes = collectionView.layoutAttributesForItem(at: willIndexPath) {
       let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
