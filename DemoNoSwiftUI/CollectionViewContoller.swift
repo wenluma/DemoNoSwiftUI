@@ -101,16 +101,13 @@ UIScrollViewDelegate  {
       guard let start = start, let disappear = disappear else {
         return false
       }
-      LOG_DEBUG("start.row = \(start.row), dis.row = \(disappear.row), r = \(start == disappear)")
       return start == disappear
     }
   }
   
   var zoomDisposable: Disposable?
   let imgNames = ["008", "009"]
-  
-  
-  
+
   private lazy var record: LifyCycleRecord = {
     let recordItem = LifyCycleRecord()
     recordItem.enabled.subscribe { [weak self]  (event) in
@@ -234,6 +231,8 @@ UIScrollViewDelegate  {
     return collectionView.indexPathForItem(at: CGPoint(x: offsetX, y: offsetY))
   }
   
+  
+  
   func stopScrollView(scrollView: UIScrollView) {
     record.end = currentIndexPath(of: scrollView as! UICollectionView)
 //    
@@ -322,5 +321,4 @@ UIScrollViewDelegate  {
   override var shouldAutomaticallyForwardAppearanceMethods: Bool {
     return false
   }
-  
 }
