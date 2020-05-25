@@ -98,10 +98,10 @@ UIScrollViewDelegate  {
     }
     
     func isChanged() -> Bool {
-      guard enabled.value == true, let start = start, let disappear = disappear else {
+      guard let start = start, let disappear = disappear else {
         return false
       }
-      LOG_DEBUG("start.row = \(start.row), dis.row = \(disappear.row)")
+      LOG_DEBUG("start.row = \(start.row), dis.row = \(disappear.row), r = \(start == disappear)")
       return start == disappear
     }
   }
@@ -112,9 +112,9 @@ UIScrollViewDelegate  {
   
   
   private lazy var record: LifyCycleRecord = {
-    let record = LifyCycleRecord()
-    record.enabled.subscribe { [weak self]  (event) in
-      guard let self = self, case let .next(enabled) = event,  enabled == nil  else{
+    let recordItem = LifyCycleRecord()
+    recordItem.enabled.subscribe { [weak self]  (event) in
+      guard let self = self, case let .next(enabled) = event,  enabled != nil  else{
         return
       }
       
@@ -136,6 +136,7 @@ UIScrollViewDelegate  {
         vc.willMove(toParent: nil)
         vc.view.removeFromSuperview()
         vc.removeFromParent()
+        vc.endAppearanceTransition()
       }
       
       let startVC = self.getVC(from: self.record.start!)
@@ -145,16 +146,18 @@ UIScrollViewDelegate  {
         willDisappear(vc: startVC)
         willAppear(vc: appearVC)
       } else {
-        if record.isChanged() {
+        if self.record.isChanged() {
           didAppear(vc: appearVC)
           didDisappear(vc: startVC)
         } else {
-//          didAppear(vc: appearVC)
-//          didDisappear(vc: disappearVC)
+          willAppear(vc: startVC)
+          willDisappear(vc: appearVC)
+          didAppear(vc: startVC)
+          didDisappear(vc: appearVC)
         }
       }
     }
-    return record
+    return recordItem
   }()
   
   lazy var myvcs: [VCT] = {
@@ -170,21 +173,9 @@ UIScrollViewDelegate  {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoom", for: indexPath) as! CollectionZoomCell
-    //    let img = UIImage(named: imgNames[indexPath.row])
-    //    cell.imageView.image = img
-    //    zoomDisposable?.dispose()
-    //    zoomDisposable = cell.scrollview.isZoomingReply.subscribe { (event) in
-    //      if case let .next(isZooming) = event {
-    //        collectionView.isScrollEnabled = !isZooming
-    //        print("collectionview is scrollEnabled = \(collectionView.isScrollEnabled)")
-    //      }
-    //    }
-    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "zoomvc", for: indexPath) as! ZoomVCCollectionCell
     let vc = myvcs[indexPath.row].vc
     cell.bindVC(vc: vc)
-
     return cell
   }
 //  MARK: collectionview delegate willappear, disappear
@@ -212,22 +203,14 @@ UIScrollViewDelegate  {
       vc.endAppearanceTransition()
       LOG_DEBUG("\(indexPath.row)")
     } else {
-      record.enabled.accept(true)
       record.appear = indexPath
+      record.enabled.accept(true)
     }
   }
   
   func unbindVCAndDisapper(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     record.disappear = indexPath
     record.enabled.accept(false)
-    
-//    let _ = cell as! ZoomVCCollectionCell
-//    let vc = myvcs[indexPath.row].vc
-//
-//    vc.beginAppearanceTransition(false, animated: false)
-//    vc.willMove(toParent: nil)
-//    // ... child vc remove from superview
-//    vc.view.removeFromSuperview()
   }
   
 // MARK: scrollview delegate
@@ -253,35 +236,35 @@ UIScrollViewDelegate  {
   
   func stopScrollView(scrollView: UIScrollView) {
     record.end = currentIndexPath(of: scrollView as! UICollectionView)
-    
-    if let willIndexPath = record.appear,
-      let attributes = collectionView.layoutAttributesForItem(at: willIndexPath) {
-      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
-      if self.view.frame.contains(toSuperCenter) {
-        LOG_DEBUG("is in center")
-        let vc = getVC(from: willIndexPath)
-        vc.didMove(toParent: self)
-        vc.endAppearanceTransition()
-      } else {
-        LOG_DEBUG("is not in center")
-      }
-      LOG_DEBUG("\(toSuperCenter)")
-    }
-    
-    if let endIndex = record.end,
-      let attributes = collectionView.layoutAttributesForItem(at: endIndex) {
-      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
-      let vc = getVC(from: endIndex)
-      
-      if self.view.frame.contains(toSuperCenter) {
-        LOG_DEBUG("is in center")
-        vc.removeFromParent()
-        vc.endAppearanceTransition()
-      } else {
-        LOG_DEBUG("is not in center")
-      }
-      LOG_DEBUG("\(toSuperCenter)")
-    }
+//    
+//    if let willIndexPath = record.appear,
+//      let attributes = collectionView.layoutAttributesForItem(at: willIndexPath) {
+//      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
+//      if self.view.frame.contains(toSuperCenter) {
+//        LOG_DEBUG("is in center")
+//        let vc = getVC(from: willIndexPath)
+//        vc.didMove(toParent: self)
+//        vc.endAppearanceTransition()
+//      } else {
+//        LOG_DEBUG("is not in center")
+//      }
+//      LOG_DEBUG("\(toSuperCenter)")
+//    }
+//    
+//    if let endIndex = record.end,
+//      let attributes = collectionView.layoutAttributesForItem(at: endIndex) {
+//      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
+//      let vc = getVC(from: endIndex)
+//      
+//      if self.view.frame.contains(toSuperCenter) {
+//        LOG_DEBUG("is in center")
+//        vc.removeFromParent()
+//        vc.endAppearanceTransition()
+//      } else {
+//        LOG_DEBUG("is not in center")
+//      }
+//      LOG_DEBUG("\(toSuperCenter)")
+//    }
   }
   
 //  MARK: - view controller
