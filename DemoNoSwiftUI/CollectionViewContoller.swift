@@ -78,7 +78,7 @@ class CollectionViewController: UIViewController,
   UICollectionViewDataSource,
 UIScrollViewDelegate  {
   
-  struct LifyCycleRecord {
+  struct ScrollTrackRecord {
     var start: IndexPath?
     var appear: IndexPath?
     var disappear: IndexPath?
@@ -106,10 +106,15 @@ UIScrollViewDelegate  {
   var zoomDisposable: Disposable?
   let imgNames = ["008", "009"]
 
-  private lazy var record: LifyCycleRecord = {
-    let recordItem = LifyCycleRecord()
+  private lazy var record: ScrollTrackRecord = {
+    let recordItem = ScrollTrackRecord()
     recordItem.enabled.subscribe { [weak self]  (event) in
-      guard let self = self, case let .next(enabled) = event,  enabled != nil  else{
+      guard let self = self,
+        case let .next(enabled) = event,
+        enabled != nil,
+        let appearIndexPath = self.record.appear,
+        let startIndexPath = self.record.start
+      else{
         return
       }
       
@@ -134,8 +139,8 @@ UIScrollViewDelegate  {
         vc.endAppearanceTransition()
       }
       
-      let startVC = self.getVC(from: self.record.start!)
-      let appearVC = self.getVC(from: self.record.appear!)
+      let startVC = self.getVC(from: startIndexPath)
+      let appearVC = self.getVC(from: appearIndexPath)
       
       if enabled == true {
         willDisappear(vc: startVC)
@@ -206,6 +211,8 @@ UIScrollViewDelegate  {
   func unbindVCAndDisapper(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     record.disappear = indexPath
     record.enabled.accept(false)
+    record.appear = nil
+    record.disappear = nil
   }
   
 // MARK: scrollview delegate
