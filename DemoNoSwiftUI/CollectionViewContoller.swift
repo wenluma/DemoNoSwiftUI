@@ -300,6 +300,10 @@ UIScrollViewDelegate  {
 //    https://stackoverflow.com/questions/27037839/force-landscape-mode-in-one-viewcontroller-using-swift/37188867 强制转屏
     number += 1
     LOG_DEBUG( "\(number)")
+    
+    // 获取当前设备的屏幕方向
+    let _ =  UIDevice.current.orientation == .portrait
+    
     var orientation = UIInterfaceOrientation.portrait.rawValue
     switch number {
     case 1:
