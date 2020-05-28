@@ -370,9 +370,7 @@ class ViewController: UIViewController {
         let rect = mutAttributed .boundingRect(with: CGSize(width: 100, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         
 //        print("Testi奥三等 \(rect)")
-        
-        
-        
+
         let highlight = YYTextHighlight()
         highlight.setColor(.red)
         //        highlight.tapAction = { [weak self] (view, attributeStr, range, rect) in

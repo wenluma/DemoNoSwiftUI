@@ -235,40 +235,9 @@ UIScrollViewDelegate  {
     let offsetY = collectionView.contentOffset.y + collectionView.center.y
     return collectionView.indexPathForItem(at: CGPoint(x: offsetX, y: offsetY))
   }
-  
-  
-  
+
   func stopScrollView(scrollView: UIScrollView) {
     record.end = currentIndexPath(of: scrollView as! UICollectionView)
-//    
-//    if let willIndexPath = record.appear,
-//      let attributes = collectionView.layoutAttributesForItem(at: willIndexPath) {
-//      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
-//      if self.view.frame.contains(toSuperCenter) {
-//        LOG_DEBUG("is in center")
-//        let vc = getVC(from: willIndexPath)
-//        vc.didMove(toParent: self)
-//        vc.endAppearanceTransition()
-//      } else {
-//        LOG_DEBUG("is not in center")
-//      }
-//      LOG_DEBUG("\(toSuperCenter)")
-//    }
-//    
-//    if let endIndex = record.end,
-//      let attributes = collectionView.layoutAttributesForItem(at: endIndex) {
-//      let toSuperCenter: CGPoint = collectionView.convert(attributes.center, to: collectionView.superview)
-//      let vc = getVC(from: endIndex)
-//      
-//      if self.view.frame.contains(toSuperCenter) {
-//        LOG_DEBUG("is in center")
-//        vc.removeFromParent()
-//        vc.endAppearanceTransition()
-//      } else {
-//        LOG_DEBUG("is not in center")
-//      }
-//      LOG_DEBUG("\(toSuperCenter)")
-//    }
   }
   
 //  MARK: - view controller
@@ -326,8 +295,7 @@ UIScrollViewDelegate  {
   override var shouldAutomaticallyForwardAppearanceMethods: Bool {
     return false
   }
-  
-  
+
   /// https://stackoverflow.com/questions/26357162/how-to-force-view-controller-orientation-in-ios-8
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
 //    可以引入变量，判断，转屏的方式
