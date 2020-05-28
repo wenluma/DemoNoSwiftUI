@@ -326,4 +326,17 @@ UIScrollViewDelegate  {
   override var shouldAutomaticallyForwardAppearanceMethods: Bool {
     return false
   }
+  
+  
+  /// https://stackoverflow.com/questions/26357162/how-to-force-view-controller-orientation-in-ios-8
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//    可以引入变量，判断，转屏的方式
+//    UIViewController.attemptRotationToDeviceOrientation()
+    return .allButUpsideDown
+  }
+  
+  override var shouldAutorotate: Bool {
+    return true
+  }
+  
 }
