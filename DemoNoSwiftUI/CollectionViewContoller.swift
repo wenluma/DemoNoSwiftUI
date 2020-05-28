@@ -283,6 +283,39 @@ UIScrollViewDelegate  {
     super.viewDidLoad()
     view.backgroundColor = .white
     view.addSubview(collectionView)
+    
+    
+    let button = UIButton(type: .custom)
+    button.setTitle("控制转屏", for: .normal)
+    button.addTarget(self, action: #selector(updateRotation), for: .touchUpInside)
+    view.addSubview(button)
+    button.sizeToFit()
+  }
+  
+  
+  var orientationMask: UIInterfaceOrientationMask = [.portrait]
+  var number = 0
+  @objc
+  func updateRotation() {
+//    https://stackoverflow.com/questions/27037839/force-landscape-mode-in-one-viewcontroller-using-swift/37188867 强制转屏
+    number += 1
+    LOG_DEBUG( "\(number)")
+    var orientation = UIInterfaceOrientation.portrait.rawValue
+    switch number {
+    case 1:
+      orientation = UIInterfaceOrientation.landscapeLeft.rawValue
+
+    case 2:
+      orientation = UIInterfaceOrientation.landscapeRight.rawValue
+    case 3:
+      orientation = UIInterfaceOrientation.portrait.rawValue
+    default:
+      number = 0
+      orientation = UIInterfaceOrientation.portrait.rawValue
+    }
+    UIDevice.current.setValue(orientation, forKey: "orientation")
+
+    UIViewController.attemptRotationToDeviceOrientation()
   }
   
   override func updateViewConstraints() {
@@ -296,15 +329,22 @@ UIScrollViewDelegate  {
     return false
   }
 
+  
+  override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+    return .landscapeRight
+  }
+  
   /// https://stackoverflow.com/questions/26357162/how-to-force-view-controller-orientation-in-ios-8
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
 //    可以引入变量，判断，转屏的方式
 //    UIViewController.attemptRotationToDeviceOrientation()
-    return .allButUpsideDown
+
+    return orientationMask
   }
   
   override var shouldAutorotate: Bool {
-    return true
+    LOG_DEBUG()
+    return false
   }
   
 }
