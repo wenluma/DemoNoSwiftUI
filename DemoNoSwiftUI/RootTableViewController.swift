@@ -10,9 +10,9 @@ import UIKit
 
 class RootTableViewController : UITableViewController {
   
-  var items: [String] = {
-    return ["rx",
-            "normal"]
+  var items: [(String, UIViewController.Type)] = {
+    return [("rx", RxObservableViewController.self),
+            ("normal", ViewController.self)]
   }()
   
   override func viewDidLoad() {
@@ -23,11 +23,19 @@ class RootTableViewController : UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-    cell?.textLabel?.text = items[indexPath.row]
+    let (name, _) = items[indexPath.row]
+    cell?.textLabel?.text = name
     return cell!
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let (_, VCType) = items[indexPath.row]
+    let vc = VCType.init(nibName:nil , bundle: nil)
+    LOG_DEBUG()
+    navigationController?.pushViewController(vc, animated: true)
   }
 }
