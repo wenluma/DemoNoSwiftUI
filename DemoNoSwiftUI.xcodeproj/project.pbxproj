@@ -17,6 +17,7 @@
 		8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */; };
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
+		8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57247C24852D4500A3C13A /* BlurBgButton.swift */; };
 		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
@@ -70,6 +71,7 @@
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
 		8E1C5EA02445982F005CBACA /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
+		8E57247C24852D4500A3C13A /* BlurBgButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBgButton.swift; sourceTree = "<group>"; };
 		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */,
 				8E1C5EA02445982F005CBACA /* Fruit.swift */,
 				8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */,
+				8E57247C24852D4500A3C13A /* BlurBgButton.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
 				8EDF53272440222600517EAE /* Main.storyboard */,
 				8EDF532A2440222800517EAE /* Assets.xcassets */,
@@ -444,6 +447,7 @@
 				8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */,
 				8EB1800C247BA54A00FE90E7 /* MLGUICollectionViewExtension.swift in Sources */,
 				8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */,
+				8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
