@@ -18,6 +18,7 @@
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
 		8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57247C24852D4500A3C13A /* BlurBgButton.swift */; };
+		8E5AAC9D2489D4D90000F458 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */; };
 		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
@@ -72,6 +73,7 @@
 		8E1C5EA02445982F005CBACA /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
 		8E57247C24852D4500A3C13A /* BlurBgButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBgButton.swift; sourceTree = "<group>"; };
+		8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				8EDF53212440222600517EAE /* AppDelegate.swift */,
 				8EDF53232440222600517EAE /* SceneDelegate.swift */,
 				8EDF53252440222600517EAE /* ViewController.swift */,
+				8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */,
 				8E11AFC92478D43E0074AFD6 /* CollectionViewContoller.swift */,
 				8E11AFCD24791B930074AFD6 /* FirstViewController.swift */,
 				8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */,
@@ -454,6 +457,7 @@
 				8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */,
 				8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */,
 				8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */,
+				8E5AAC9D2489D4D90000F458 /* RootTableViewController.swift in Sources */,
 				8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */,
 				8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */,
 			);
