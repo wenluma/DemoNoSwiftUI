@@ -25,7 +25,7 @@ let f2 = floor(0.1) // 0 向下取整
 func LOG_DEBUG(file: String = #file, funcname: String = #function, line: Int = #line ,_ message: String = "") {
   
   let name = Thread.current.description
-  let msg = String(file.split(separator: "/").last!) + ", " + funcname + " line:\(line) " + message + "thread: " + name
+  let msg = String(file.split(separator: "/").last!) + ", " + funcname + " line:\(line) " + message + "[thread: " + name + "]"
   log.debug(msg)
 }
 
