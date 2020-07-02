@@ -185,5 +185,26 @@ extension String {
     func mgl_urlDecode() -> String? {
         return self.removingPercentEncoding
     }
+}
+
+extension String {
+  func toPinyin() -> String? {
+    if self.isEmpty {
+      return nil
+    }
     
+    let cf = NSMutableString(string: self) as CFMutableString
+    CFStringTransform(cf, nil, kCFStringTransformMandarinLatin, false)
+    CFStringTransform(cf, nil, kCFStringTransformStripDiacritics, false)
+    print(cf)
+    let pinyin = cf as String
+    return pinyin
+  }
+  
+  func pinyinFirstLetter() -> String? {
+    guard let pinyin = toPinyin() else {
+      return nil
+    }
+    return pinyin.substring(to: 1)
+  }
 }
