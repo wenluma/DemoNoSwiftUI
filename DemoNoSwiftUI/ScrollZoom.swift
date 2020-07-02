@@ -17,6 +17,8 @@ fileprivate class ScrollZoom: NSObject, UIScrollViewDelegate {
   weak var myScrollView: UIScrollView?
   weak var otherDelegate: UIScrollViewDelegate?
   
+  let myZoomScale: CGFloat = 0.5
+  
   private(set) var isZoomingReply: BehaviorRelay = BehaviorRelay(value: false)
   
   convenience init(scrollView: UIScrollView) {
@@ -31,19 +33,33 @@ fileprivate class ScrollZoom: NSObject, UIScrollViewDelegate {
   }
   
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    if zoomView != nil {    
+      print(zoomView!)
+    }
     return zoomView
   }
   
+  func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+    print("begin: \(zoomView!)")
+  }
+  
+  func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+    print("scale: \(scale)")
+    print("end: \(zoomView!)")
+  }
+  
   func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    print("zoom: \(scrollView.zoomScale)")
+//    zoomView?.transform = CGAffineTransform.identity.scaledBy(x: scrollView.zoomScale, y: scrollView.zoomScale)
+    print("zoom: \(zoomView!)")
     if let other = otherDelegate {
       other.scrollViewDidZoom?(scrollView)
     }
     
-    let isZooming = !scrollView.zoomScale.isEqual(to: 1.0)
+    let isZooming = !scrollView.zoomScale.isEqual(to: scrollView.minimumZoomScale)
+    print("isZooming: \(isZooming)")
     isZoomingReply.accept(isZooming)
   }
-  
-  
 }
 
 class ZoomScrollView: UIScrollView {
@@ -56,8 +72,8 @@ class ZoomScrollView: UIScrollView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.minimumZoomScale = 1.0
-    self.maximumZoomScale = 5.0
+    self.minimumZoomScale = 0.5
+    self.maximumZoomScale = 2.5
     self.delegate = nil
   }
   
