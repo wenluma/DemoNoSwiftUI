@@ -12,11 +12,17 @@ class RootTableViewController : UITableViewController {
   
   var items: [(String, UIViewController.Type)] = {
     return [("rx", RxObservableViewController.self),
-            ("normal", ViewController.self)]
+            ("normal", ViewController.self),
+            ("table", MyTableViewController.self),
+            ("frame-transform", FrameTransformViewController.self)
+    ]
   }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    var rect = CGRect(x: 10, y: 10, width: 20, height: 20)
+    print("rect = \(rect.scaleXY(by: 2))")
     
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
   }
