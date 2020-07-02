@@ -58,6 +58,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       log.debug("age", context: 123)  // "DEBUG: age 123"
       log.info("my data", context: [1, "a", 2]) // "INFO: my data [1, \"a\", 2]"
         
+      
+      "张三".toPinyin()
+      
+      
+//      let queue = DispatchQueue(label: "workqueue")
+//      print("A")
+//      queue.async {
+//        print("B")
+//      }
+//      
+//      queue.asyncAfter(deadline: .now() + .milliseconds(200)) {
+//        queue.sync {
+//          print("C")
+//        }
+//      }
+//      
+//      queue.asyncAfter(deadline: .now() + .milliseconds(100)) {
+//        queue.async {
+//          print("D")
+//        }
+//      }
+//      
+//      queue.sync {
+//        print("E")
+//      }
+//      
         return true
     }
 
