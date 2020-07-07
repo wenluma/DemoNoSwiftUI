@@ -14,7 +14,9 @@ class RootTableViewController : UITableViewController {
     return [("rx", RxObservableViewController.self),
             ("normal", ViewController.self),
             ("table", MyTableViewController.self),
-            ("frame-transform", FrameTransformViewController.self)
+            ("frame-transform", FrameTransformViewController.self),
+            ("safe area", SafeAreaViewController.self)
+      
     ]
   }()
   
