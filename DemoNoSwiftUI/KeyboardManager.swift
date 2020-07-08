@@ -8,61 +8,13 @@
 
 import Foundation
 import UIKit
-
-extension Notification.Name {
-  static let myKeyboardWillShow = Notification.Name("my.keybarod.willShow")
-}
-
-/*
- https://stackoverflow.com/questions/26939105/keyboard-animation-curve-as-int
- 
- po notification
- ▿ name = UIKeyboardWillChangeFrameNotification,
- object = nil,
- userInfo = Optional([AnyHashable("UIKeyboardFrameBeginUserInfoKey"): NSRect: {{0, 477}, {375, 335}}, AnyHashable("UIKeyboardIsLocalUserInfoKey"): 1,
- AnyHashable("UIKeyboardAnimationCurveUserInfoKey"): 7,
- AnyHashable("UIKeyboardFrameEndUserInfoKey"): NSRect: {{0, 445.33333333333326}, {375, 366.66666666666674}}, AnyHashable("UIKeyboardBoundsUserInfoKey"): NSRect: {{0, 0}, {375, 366.66666666666674}},
- AnyHashable("UIKeyboardCenterEndUserInfoKey"): NSPoint: {187.5, 628.66666666666663}, AnyHashable("UIKeyboardAnimationDurationUserInfoKey"): 0,
- AnyHashable("UIKeyboardCenterBeginUserInfoKey"): NSPoint: {187.5, 644.5}])
- - name : "UIKeyboardWillChangeFrameNotification"
- ▿ userInfo : 8 elements
- ▿ 0 : 2 elements
- ▿ key : AnyHashable("UIKeyboardFrameBeginUserInfoKey")
- - value : "UIKeyboardFrameBeginUserInfoKey"
- - value : NSRect: {{0, 477}, {375, 335}}
- ▿ 1 : 2 elements
- ▿ key : AnyHashable("UIKeyboardIsLocalUserInfoKey")
- - value : "UIKeyboardIsLocalUserInfoKey"
- - value : 1
- ▿ 2 : 2 elements
- ▿ key : AnyHashable("UIKeyboardAnimationCurveUserInfoKey")
- - value : "UIKeyboardAnimationCurveUserInfoKey"
- - value : 7
- ▿ 3 : 2 elements
- ▿ key : AnyHashable("UIKeyboardFrameEndUserInfoKey")
- - value : "UIKeyboardFrameEndUserInfoKey"
- - value : NSRect: {{0, 445.33333333333326}, {375, 366.66666666666674}}
- ▿ 4 : 2 elements
- ▿ key : AnyHashable("UIKeyboardBoundsUserInfoKey")
- - value : "UIKeyboardBoundsUserInfoKey"
- - value : NSRect: {{0, 0}, {375, 366.66666666666674}}
- ▿ 5 : 2 elements
- ▿ key : AnyHashable("UIKeyboardCenterEndUserInfoKey")
- - value : "UIKeyboardCenterEndUserInfoKey"
- - value : NSPoint: {187.5, 628.66666666666663}
- ▿ 6 : 2 elements
- ▿ key : AnyHashable("UIKeyboardAnimationDurationUserInfoKey")
- - value : "UIKeyboardAnimationDurationUserInfoKey"
- - value : 0
- ▿ 7 : 2 elements
- ▿ key : AnyHashable("UIKeyboardCenterBeginUserInfoKey")
- - value : "UIKeyboardCenterBeginUserInfoKey"
- - value : NSPoint: {187.5, 644.5}
- */
-
+#if canImport(RxSwift)
+import RxSwift
+import RxCocoa
+#endif
 
 // 键盘相关
-extension NSNotification {
+fileprivate extension NSNotification {
   private func keyboardValue<T>(for key: String, result: inout T?) {
     guard let userInfo = userInfo,
       let value = userInfo[key],
@@ -81,7 +33,6 @@ extension NSNotification {
       return rect
     }
     return nil
-    //    return (userInfo?[UIResponder.keyboardFrameBeginUserInfoKey as AnyHashable] as? NSValue)?.cgRectValue
   }
   
   var kb_startFrame: CGRect? {
@@ -106,7 +57,7 @@ extension NSNotification {
     var value: NSNumber?
     keyboardValue(for: UIResponder.keyboardAnimationCurveUserInfoKey, result: &value)
     if let curveRaw = value?.uintValue {
-      return  UIView.AnimationOptions(rawValue: curveRaw << 16)
+      return  UIView.AnimationOptions(rawValue: UInt(curveRaw << 16))
     }
     return UIView.AnimationOptions.curveEaseInOut
   }
@@ -131,13 +82,22 @@ extension NSNotification {
 }
 
 class KeyboardManager {
-    
   weak var view: UIView?
+  // animation 更精细的控制
   private let animation: AnimationBlock?
-  private let animationDelatY: AnimationDelatYBlock?
+  // 简单控制， y 的变化，与 animation 互斥，只会执行一个
+  private let animationDelatY: AnimationDiffBlock?
   typealias AnimationBlock = (CGRect, CGRect) -> Void
-  typealias AnimationDelatYBlock = (CGFloat) -> Void
-  init(animation: AnimationBlock? = nil, animationDelatY: AnimationDelatYBlock? = nil) {
+  typealias AnimationDiffBlock = (CGFloat) -> Void
+  
+  #if canImport(RxSwift)
+  // 键盘的height
+  let publishDiff: PublishRelay<CGFloat> = PublishRelay()
+  // startFrame, endFrame
+  let publishDetail: PublishRelay<(CGRect, CGRect)> = PublishRelay()
+  #endif
+  
+  init(animation: AnimationBlock? = nil, animationDelatY: AnimationDiffBlock? = nil) {
     self.animation = animation
     self.animationDelatY = animationDelatY
     
@@ -189,18 +149,17 @@ class KeyboardManager {
 
     print("start:\(startFrame); end:\(endFrame)")
     
-    if let block = self.animation {
-      block(startFrame, endFrame)
-    }
-    
-    if let block = self.animationDelatY, let view = view {
-      if (endFrame.minY - view.bounds.height).isEqual(to: 0) {
-        block(0)
-      } else {
-        block(endFrame.height)
+    if let view = view {
+      let diff = (endFrame.minY - view.bounds.height).isEqual(to: 0) ? 0 : endFrame.height
+      if let block = self.animationDelatY {
+        block(diff)
+      } else if let block = self.animation {
+        block(startFrame, endFrame)
       }
+      publishDiff.accept(diff)
     }
-    
+    publishDetail.accept((startFrame, endFrame))
+
     UIView.animate(
       withDuration: duration,
       delay: 0,
@@ -210,25 +169,6 @@ class KeyboardManager {
     }) { [weak self] (finished) in
       self?.view?.layoutIfNeeded()
     }
-    
-    //      if let userInfo = notification.userInfo {
-    //          let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-    //          let endFrameY = endFrame?.origin.y ?? 0
-    //          let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-    //          let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
-    //          let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-    //          let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
-    //          if endFrameY >= UIScreen.main.bounds.size.height {
-    //              self.keyboardHeightLayoutConstraint?.constant = 0.0
-    //          } else {
-    //              self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
-    //          }
-    //          UIView.animate(withDuration: duration,
-    //                                     delay: TimeInterval(0),
-    //                                     options: animationCurve,
-    //                                     animations: { self.view.layoutIfNeeded() },
-    //                                     completion: nil)
-    //      }
   }
   
   deinit {

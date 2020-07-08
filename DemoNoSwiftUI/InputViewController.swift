@@ -44,9 +44,17 @@ class InputViewController: UIViewController {
 //      self.keyboardBottom?.update(inset: max(delatY, CGFloat(kBarHeight)))
 //    }
     
-    let manager = KeyboardManager { [weak self] (delatY) in
+//    let manager = KeyboardManager { [weak self] (delatY) in
+//      guard let self = self else { return }
+//      let height =  max(delatY, 0) + kBarHeight
+//      self.keyboardBottom?.update(offset: height)
+//    }
+    
+    let manager = KeyboardManager()
+    
+    manager.publishDiff.takeUntil(self.rx.deallocated).bind { [weak self] (diff) in
       guard let self = self else { return }
-      let height =  max(delatY, 0) + kBarHeight
+      let height = max(diff, 0) + kBarHeight
       self.keyboardBottom?.update(offset: height)
     }
     
