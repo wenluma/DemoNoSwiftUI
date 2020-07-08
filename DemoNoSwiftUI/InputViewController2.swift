@@ -14,19 +14,28 @@ import SnapKit
  获取安全区域的top，bottom 高度 https://stackoverflow.com/questions/46829840/get-safe-area-inset-top-and-bottom-heights
  iOS 11, iOS 10 顶部，底部布局view https://svasilevkin.wordpress.com/2019/01/11/snapkit-safe-area-and-layout-guide-difference/
  
- 距离底部有一定间距，键盘弹起是，同步改变；减去安全区域
+ 1. 距离底部有一定间距，键盘弹起是，同步改变；减去安全区域
+ 2. textview 高度适应文字，添加占位字符, 限制长度
+ 
   */
 
 fileprivate let kOffset: CGFloat = 30
 
-class InputViewController2: UIViewController {
+class InputViewController2: UIViewController, UITextViewDelegate {
   
   private var keyboardBottom: Constraint?
+  private var textHeight: Constraint?
+  private lazy var textView: UITextView = {
+    let textV = UITextView()
+    textV.backgroundColor = .cyan
+    textV.delegate = self
+    return textV
+  }()
   
-  private lazy var textField: UITextField = {
-    let field = UITextField()
-    field.backgroundColor = .cyan
-    return field
+  private lazy var textplaceholderLabel: UILabel = {
+    let label = UILabel()
+    label.text = "请输入会议主题"
+    return label
   }()
   
   private lazy var keyboardManager: KeyboardManager = {
@@ -66,8 +75,9 @@ class InputViewController2: UIViewController {
     view.backgroundColor = .white
     
     view.addSubview(bottomView)
-    view.addSubview(textField)
+    view.addSubview(textView)
     view.addLayoutGuide(bottomHeightGuide)
+    view.addSubview(textplaceholderLabel)
     
     view.addGestureRecognizer(tap)
     view.setNeedsUpdateConstraints()
@@ -92,11 +102,17 @@ class InputViewController2: UIViewController {
       make.leading.trailing.equalTo(0)
     }
     
-    textField.snp.makeConstraints { (make) in
+    
+    textView.snp.makeConstraints { (make) in
       make.centerY.equalTo(view.snp.centerY).multipliedBy(0.5)
-      make.leading.equalTo(10)
-      make.trailing.equalTo(-10)
-      make.height.equalTo(44)
+      make.leading.equalTo(80)
+      make.trailing.equalTo(-80)
+      self.textHeight = make.height.equalTo(44).constraint
+    }
+    
+    textplaceholderLabel.snp.makeConstraints { (make) in
+      make.leading.trailing.equalTo(textView)
+      make.centerY.equalTo(textView)
     }
     
     //
@@ -132,7 +148,25 @@ class InputViewController2: UIViewController {
   
   @objc
   func hiddenKeyboard() {
-    textField.resignFirstResponder()
+    textView.resignFirstResponder()
   }
-
+  
+  func textViewDidChange(_ textView: UITextView) {
+    textHeight?.update(offset: min(150, textView.contentSize.height))
+  }
+  
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    print(textView.text)
+  }
+  
+  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    print("textView.text.count = \(textView.text.count), range = \(range); text = \(text)")
+    
+    textplaceholderLabel.isHidden = textView.text.count > 0
+    
+    if range.location + text.count <= 80 {
+      return true
+    }
+    return false
+  }
 }
