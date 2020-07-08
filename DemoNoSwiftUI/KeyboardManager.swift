@@ -149,16 +149,17 @@ class KeyboardManager {
 
     print("start:\(startFrame); end:\(endFrame)")
     
-    if let view = view {
-      let diff = (endFrame.minY - view.bounds.height).isEqual(to: 0) ? 0 : endFrame.height
-      if let block = self.animationDelatY {
-        block(diff)
-      } else if let block = self.animation {
-        block(startFrame, endFrame)
-      }
-      publishDiff.accept(diff)
+    let diff = (endFrame.minY - UIScreen.main.bounds.height).isEqual(to: 0) ? 0 : endFrame.height
+    publishDiff.accept(diff)
+    
+    if let block = self.animationDelatY {
+      block(diff)
     }
+    
     publishDetail.accept((startFrame, endFrame))
+    if let block = self.animation {
+      block(startFrame, endFrame)
+    }
 
     UIView.animate(
       withDuration: duration,
