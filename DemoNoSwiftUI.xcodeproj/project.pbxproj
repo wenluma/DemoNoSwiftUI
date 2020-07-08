@@ -17,6 +17,7 @@
 		8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */; };
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
+		8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E452DD424B485D500DBA526 /* InputViewController.swift */; };
 		8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F58DC24AADD4D00C4B9C7 /* CGRectExtension.swift */; };
 		8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57247C24852D4500A3C13A /* BlurBgButton.swift */; };
 		8E5AAC9D2489D4D90000F458 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */; };
@@ -79,6 +80,7 @@
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
 		8E1C5EA02445982F005CBACA /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
+		8E452DD424B485D500DBA526 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		8E4F58DC24AADD4D00C4B9C7 /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		8E57247C24852D4500A3C13A /* BlurBgButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurBgButton.swift; sourceTree = "<group>"; };
 		8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */,
 				8ED470AD24A9F7E300F745C1 /* FrameTransformViewController.swift */,
 				8ED6FC8524B453140062712B /* SafeAreaViewController.swift */,
+				8E452DD424B485D500DBA526 /* InputViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -480,6 +483,7 @@
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
 				8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */,
 				8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */,
+				8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */,
 				8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */,
 				8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */,
 				8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */,
@@ -667,6 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SMRC976R46;
 				INFOPLIST_FILE = DemoNoSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,6 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SMRC976R46;
 				INFOPLIST_FILE = DemoNoSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
