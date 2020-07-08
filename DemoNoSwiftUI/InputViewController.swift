@@ -28,30 +28,7 @@ class InputViewController: UIViewController {
   }()
   
   private lazy var keyboardManager: KeyboardManager = {
-//    let manager = KeyboardManager(animation: { [weak self] (start, end) in
-//      guard let self = self else { return }
-//      var delatY = 0
-//      if start.minY < end.minY {
-//        // endY - startY > 0; hidden keyboard
-//        delatY = 0
-//      } else {
-//        // show keyboard
-//        delatY = Int(end.height - self.view.safeAreaInsets.bottom) + kBarHeight
-//      }
-//      self.keyboardBottom?.update(inset: max(delatY, kBarHeight))
-//    }) { [weak self] (delatY) in
-//      guard let self = self else { return }
-//      self.keyboardBottom?.update(inset: max(delatY, CGFloat(kBarHeight)))
-//    }
-    
-//    let manager = KeyboardManager { [weak self] (delatY) in
-//      guard let self = self else { return }
-//      let height =  max(delatY, 0) + kBarHeight
-//      self.keyboardBottom?.update(offset: height)
-//    }
-    
     let manager = KeyboardManager()
-    
     manager.publishDiff.takeUntil(self.rx.deallocated).bind { [weak self] (diff) in
       guard let self = self else { return }
       let height = max(diff, 0) + kBarHeight
