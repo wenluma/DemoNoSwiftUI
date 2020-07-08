@@ -16,8 +16,8 @@ class RootTableViewController : UITableViewController {
             ("table", MyTableViewController.self),
             ("frame-transform", FrameTransformViewController.self),
             ("safe area", SafeAreaViewController.self),
-            ("keyboard", InputViewController.self)
-      
+            ("keyboard", InputViewController.self),
+            ("keyboard2", InputViewController2.self)
     ]
   }()
   
