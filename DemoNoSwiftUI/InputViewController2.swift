@@ -161,6 +161,10 @@ class InputViewController2: UIViewController, UITextViewDelegate {
   
   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
     print("textView.text.count = \(textView.text.count), range = \(range); text = \(text)")
+    if text == "\n" {
+      textView.resignFirstResponder()
+      return false
+    }
     
     textplaceholderLabel.isHidden = textView.text.count > 0
     
