@@ -20,7 +20,7 @@ class RootTableViewController : UITableViewController {
             ("keyboard2", InputViewController2.self),
             ("cell selected", TableViewController2.self),
             ("switchUI", SwitchUIViewController.self),
-
+            ("layout", LayoutViewController.self)
     ]
   }()
   

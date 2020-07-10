@@ -30,6 +30,7 @@
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
 		8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */; };
 		8E97202624B8094600382E40 /* SwitchUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202524B8094600382E40 /* SwitchUIViewController.swift */; };
+		8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202C24B8391D00382E40 /* LayoutViewController.swift */; };
 		8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C9B54246692240040A7B3 /* MGLFileManager.swift */; };
 		8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA22E37248DE42C00A53008 /* MyTableViewController.swift */; };
 		8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC44382459170C004F4567 /* MGLTextInputDemo.swift */; };
@@ -96,6 +97,7 @@
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
 		8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWrapper.swift; sourceTree = "<group>"; };
 		8E97202524B8094600382E40 /* SwitchUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUIViewController.swift; sourceTree = "<group>"; };
+		8E97202C24B8391D00382E40 /* LayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
 		8E9C9B54246692240040A7B3 /* MGLFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGLFileManager.swift; sourceTree = "<group>"; };
 		8EA22E37248DE42C00A53008 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		8EAC44382459170C004F4567 /* MGLTextInputDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLTextInputDemo.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				8E452DD424B485D500DBA526 /* InputViewController.swift */,
 				8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */,
 				8E97202524B8094600382E40 /* SwitchUIViewController.swift */,
+				8E97202C24B8391D00382E40 /* LayoutViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -495,6 +498,7 @@
 				8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */,
 				8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */,
 				8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */,
+				8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */,
 				8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */,
 				8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */,
 				8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */,
