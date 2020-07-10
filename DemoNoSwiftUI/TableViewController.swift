@@ -1,14 +1,25 @@
 //
-//  RootTableViewController.swift
+//  TableViewController.swift
 //  DemoNoSwiftUI
 //
-//  Created by miao gaoliang on 2020/6/5.
+//  Created by miao gaoliang on 2020/7/9.
 //  Copyright © 2020 miao gaoliang. All rights reserved.
 //
 
 import UIKit
 
-class RootTableViewController : UITableViewController {
+class Cell1: UITableViewCell {
+  
+  override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    if highlighted {
+      self.contentView.backgroundColor = .red
+    } else {
+      contentView.backgroundColor = .yellow
+    }
+  }
+}
+
+class TableViewController2 : UITableViewController {
   
   var items: [(String, UIViewController.Type)] = {
     return [("rx", RxObservableViewController.self),
@@ -17,10 +28,7 @@ class RootTableViewController : UITableViewController {
             ("frame-transform", FrameTransformViewController.self),
             ("safe area", SafeAreaViewController.self),
             ("keyboard", InputViewController.self),
-            ("keyboard2", InputViewController2.self),
-            ("cell selected", TableViewController2.self),
-            ("switchUI", SwitchUIViewController.self),
-
+            ("keyboard2", InputViewController2.self)
     ]
   }()
   
@@ -30,7 +38,7 @@ class RootTableViewController : UITableViewController {
     var rect = CGRect(x: 10, y: 10, width: 20, height: 20)
     print("rect = \(rect.scaleXY(by: 2))")
     
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(Cell1.self, forCellReuseIdentifier: "cell")
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +56,6 @@ class RootTableViewController : UITableViewController {
     let (_, VCType) = items[indexPath.row]
     let vc = VCType.init(nibName:nil , bundle: nil)
     LOG_DEBUG()
-    navigationController?.pushViewController(vc, animated: true)
+//    navigationController?.pushViewController(vc, animated: true)
   }
 }
