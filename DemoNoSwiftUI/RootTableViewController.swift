@@ -12,7 +12,6 @@ class RootTableViewController : UITableViewController {
   
   var items: [(String, UIViewController.Type)] = {
     return [("rx", RxObservableViewController.self),
-            ("normal", ViewController.self),
             ("table", MyTableViewController.self),
             ("frame-transform", FrameTransformViewController.self),
             ("safe area", SafeAreaViewController.self),
@@ -20,7 +19,10 @@ class RootTableViewController : UITableViewController {
             ("keyboard2", InputViewController2.self),
             ("cell selected", TableViewController2.self),
             ("switchUI", SwitchUIViewController.self),
-            ("layout", LayoutViewController.self)
+            ("layout", LayoutViewController.self),
+            ("rotate", RotateViewController.self),
+            ("textview", TextViewController.self),
+            ("normal", ViewController.self)
     ]
   }()
   

@@ -25,6 +25,7 @@
 		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
 		8E6E880324B6A88F004FD489 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E880224B6A88F004FD489 /* TableViewController.swift */; };
 		8E6F0AF524B5BFE500405B73 /* InputViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */; };
+		8E72AC0524BED797005CB9B1 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0424BED796005CB9B1 /* TextViewController.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
@@ -32,6 +33,7 @@
 		8E97202624B8094600382E40 /* SwitchUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202524B8094600382E40 /* SwitchUIViewController.swift */; };
 		8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202C24B8391D00382E40 /* LayoutViewController.swift */; };
 		8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C9B54246692240040A7B3 /* MGLFileManager.swift */; };
+		8E9FFCCD24BC8AE000E7EC0F /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9FFCCC24BC8AE000E7EC0F /* RotateViewController.swift */; };
 		8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA22E37248DE42C00A53008 /* MyTableViewController.swift */; };
 		8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC44382459170C004F4567 /* MGLTextInputDemo.swift */; };
 		8EB1800C247BA54A00FE90E7 /* MLGUICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1800B247BA54900FE90E7 /* MLGUICollectionViewExtension.swift */; };
@@ -92,6 +94,7 @@
 		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		8E6E880224B6A88F004FD489 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController2.swift; sourceTree = "<group>"; };
+		8E72AC0424BED796005CB9B1 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		8E97202524B8094600382E40 /* SwitchUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUIViewController.swift; sourceTree = "<group>"; };
 		8E97202C24B8391D00382E40 /* LayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
 		8E9C9B54246692240040A7B3 /* MGLFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGLFileManager.swift; sourceTree = "<group>"; };
+		8E9FFCCC24BC8AE000E7EC0F /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 		8EA22E37248DE42C00A53008 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		8EAC44382459170C004F4567 /* MGLTextInputDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLTextInputDemo.swift; sourceTree = "<group>"; };
 		8EB1800B247BA54900FE90E7 /* MLGUICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGUICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */,
 				8E97202524B8094600382E40 /* SwitchUIViewController.swift */,
 				8E97202C24B8391D00382E40 /* LayoutViewController.swift */,
+				8E9FFCCC24BC8AE000E7EC0F /* RotateViewController.swift */,
+				8E72AC0424BED796005CB9B1 /* TextViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -493,9 +499,11 @@
 				8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
+				8E9FFCCD24BC8AE000E7EC0F /* RotateViewController.swift in Sources */,
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
 				8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */,
 				8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */,
+				8E72AC0524BED797005CB9B1 /* TextViewController.swift in Sources */,
 				8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */,
 				8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */,
 				8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */,
