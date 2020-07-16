@@ -22,6 +22,7 @@ class RootTableViewController : UITableViewController {
             ("layout", LayoutViewController.self),
             ("rotate", RotateViewController.self),
             ("textview", TextViewController.self),
+            ("textview-tail-icon", TextViewController2.self),
             ("normal", ViewController.self)
     ]
   }()
