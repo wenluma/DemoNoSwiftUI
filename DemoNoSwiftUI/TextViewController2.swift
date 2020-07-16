@@ -58,7 +58,8 @@ class TextViewController2: UIViewController {
   
   @objc
   func updateText(tap: UITapGestureRecognizer) {
-    info.append("好")
+    // 添加一个空格，满足需求
+    info.append("好 ")
     let mutAttr = NSMutableAttributedString(string: info)
     mutAttr.append(tailToken)
     detail.attributedText = mutAttr
