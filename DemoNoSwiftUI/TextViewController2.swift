@@ -24,6 +24,7 @@ class TextViewController2: UIViewController {
   private lazy var detail: UILabel = {
     let lab = UILabel()
     lab.numberOfLines = 0
+    lab.font = UIFont.systemFont(ofSize: 17)
     return lab
   }()
   
@@ -33,12 +34,16 @@ class TextViewController2: UIViewController {
     let lab = UILabel()
     lab.font = .systemFont(ofSize: 10)
     lab.text = " Max 200 "
+    lab.layer.cornerRadius = 4.0
+    lab.layer.masksToBounds = true
     lab.textColor = UIColor(red: 135, green: 139, blue: 144)
     lab.backgroundColor = UIColor(red: 135, green: 139, blue: 144).withAlphaComponent(0.2)
     lab.sizeToFit()
+    let rect = lab.frame
+    lab.frame = CGRect(x: 0, y: 0, width: rect.width, height: 16)
 
     let img = lab.asImage()
-    tailToken = img.toAttributedString()
+    tailToken = img.toAttributedString(font: UIFont.systemFont(ofSize: 17))
 
     view.addSubview(detail)
     detail.snp.makeConstraints { (make) in

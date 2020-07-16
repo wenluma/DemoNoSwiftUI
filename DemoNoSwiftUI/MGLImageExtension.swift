@@ -22,14 +22,21 @@ extension UIImage {
 // https://www.jianshu.com/p/89ed22f50a9c
 // 搜索 AttributedString.key https://developer.apple.com/documentation/foundation/nsattributedstring/key
 extension UIImage {
-  func toAttributedString(with heightRatio: CGFloat = 0, tintColor: UIColor? = nil) -> NSAttributedString {
+  func toAttributedString(with heightRatio: CGFloat = 0,
+                          tintColor: UIColor? = nil,
+                          font: UIFont? = nil) -> NSAttributedString {
     let attachment = NSTextAttachment()
-    let image = self
-    
+    let image: UIImage
     if let tintColor = tintColor {
-      image.withTintColor(tintColor, renderingMode: .alwaysTemplate)
+      image = self.withTintColor(tintColor, renderingMode: .alwaysTemplate)
+    } else {
+      image = self
     }
-    attachment.image = image
+    attachment.image = self
+    
+    if let font = font {
+      attachment.bounds = CGRect(x: 0, y: font.descender/2, width: image.size.width, height: image.size.height)
+    }
     
     if heightRatio > 0 {
       let ratio: CGFloat = image.size.width / image.size.height
