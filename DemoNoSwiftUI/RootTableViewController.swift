@@ -21,8 +21,8 @@ class RootTableViewController : UITableViewController {
             ("switchUI", SwitchUIViewController.self),
             ("layout", LayoutViewController.self),
             ("rotate", RotateViewController.self),
-            ("textview", TextViewController.self),
-            ("textview-tail-icon", TextViewController2.self),
+            ("textview 单行", TextViewController.self),
+            ("textview-tail-icon 折行", TextViewController2.self),
             ("normal", ViewController.self)
     ]
   }()

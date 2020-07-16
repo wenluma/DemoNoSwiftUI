@@ -33,8 +33,8 @@ class TextViewController2: UIViewController {
     let lab = UILabel()
     lab.font = .systemFont(ofSize: 10)
     lab.text = " Max 200 "
-    lab.textColor = UIColor(r: 135, g: 139, b: 144, a: 1.0)
-    lab.backgroundColor = UIColor(r: 135, g: 139, b: 144, a: 0.2)
+    lab.textColor = UIColor(red: 135, green: 139, blue: 144)
+    lab.backgroundColor = UIColor(red: 135, green: 139, blue: 144).withAlphaComponent(0.2)
     lab.sizeToFit()
 
     let img = lab.asImage()

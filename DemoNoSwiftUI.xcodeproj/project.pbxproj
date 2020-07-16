@@ -27,6 +27,7 @@
 		8E6F0AF524B5BFE500405B73 /* InputViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */; };
 		8E72AC0524BED797005CB9B1 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0424BED796005CB9B1 /* TextViewController.swift */; };
 		8E72AC0A24BFE9DA005CB9B1 /* TextViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */; };
+		8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
@@ -97,6 +98,7 @@
 		8E6F0AF424B5BFE500405B73 /* InputViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController2.swift; sourceTree = "<group>"; };
 		8E72AC0424BED796005CB9B1 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController2.swift; sourceTree = "<group>"; };
+		8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				8E1C5EA02445982F005CBACA /* Fruit.swift */,
 				8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */,
 				8E57247C24852D4500A3C13A /* BlurBgButton.swift */,
+				8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
 				8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */,
 				8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */,
@@ -490,6 +493,7 @@
 				8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */,
 				8EDF53222440222600517EAE /* AppDelegate.swift in Sources */,
 				8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */,
+				8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */,
 				8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */,
 				8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */,
 				8E1C5EA124459830005CBACA /* Fruit.swift in Sources */,
