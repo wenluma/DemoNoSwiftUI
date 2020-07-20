@@ -25,6 +25,7 @@ class RootTableViewController : UITableViewController {
             ("textview-tail-icon 折行", TextViewController2.self),
             ("no animation", WithoutAnimationViewContronller.self),
             ("no-result for search", NoResultViewController.self),
+            ("resource load", LoadBundletViewController.self),
             ("normal", ViewController.self)
     ]
   }()
