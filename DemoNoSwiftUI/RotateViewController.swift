@@ -10,6 +10,9 @@
 import UIKit
 import SnapKit
 
+/*
+ 屏幕转屏时，设备转屏，有 faceUp，faceDown 的差异
+ */
 class RotateViewController: UIViewController {
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -31,6 +34,37 @@ class RotateViewController: UIViewController {
     view.backgroundColor = .white
     view.addSubview(imgView)
     view.setNeedsUpdateConstraints()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(changeOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
+    LOG_DEBUG("view.Transform = \(view.transform)")
+  }
+  
+  
+  @objc
+  func changeOrientation(notification: Notification) {
+    if UIDevice.current.orientation.isValidInterfaceOrientation {
+      print("isVaild")
+    } else {
+      print("isInVaild")
+    }
+    
+    switch UIDevice.current.orientation {
+      case .portrait:
+        print("portrait = 1")
+      case .portraitUpsideDown:
+      print("portraitUpsideDown = 2")
+      case .landscapeLeft:
+      print("landscapeLeft = 3")
+      case .landscapeRight:
+      print("landscapeRight = 4")
+      case .faceUp:
+      print("faceUp = 5")
+      case .faceDown:
+      print("faceDown = 6")
+      default:
+      print("unknow")
+    }
+    print("app = \(UIApplication.shared.statusBarOrientation.rawValue)")
   }
   
   override func updateViewConstraints() {
@@ -68,11 +102,39 @@ class RotateViewController: UIViewController {
   }
   
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+   
+    LOG_DEBUG("coordinator.targetTransform = \(coordinator.targetTransform)")
+    LOG_DEBUG("coordinator.fromView = \(coordinator.view(forKey: UITransitionContextViewKey.from))")
+    LOG_DEBUG("coordinator.toView = \(coordinator.view(forKey: UITransitionContextViewKey.to))")
+
+//    coordinator.containerView.addSubview(imgView)
+//    coordinator.containerView.addSubview(imgView)
+//    imgView.snp.remakeConstraints { (make) in
+//      make.edges.equalToSuperview()
+//    }
     
     coordinator.animate(alongsideTransition: { (context) in
-      
+//      self.imgView.frame = context.containerView.frame
     }) { (context) in
-      
+//      self.view.addSubview(self.imgView)
+//      self.imgView.snp.remakeConstraints { (make) in
+//        make.edges.equalToSuperview()
+//      }
     }
   }
+}
+
+extension UIWindow {
+//  https://stackoverflow.com/questions/57965701/statusbarorientation-was-deprecated-in-ios-13-0-when-attempting-to-get-app-ori
+    static var isLandscape: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isLandscape ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isLandscape
+        }
+    }
 }
