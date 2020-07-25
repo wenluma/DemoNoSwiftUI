@@ -26,6 +26,7 @@ class RootTableViewController : UITableViewController {
             ("no animation", WithoutAnimationViewContronller.self),
             ("no-result for search", NoResultViewController.self),
             ("resource load", LoadBundletViewController.self),
+            ("CGAffineTransform", CGAffineTransformViewController.self),
             ("normal", ViewController.self)
     ]
   }()

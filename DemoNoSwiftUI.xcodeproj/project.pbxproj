@@ -33,6 +33,7 @@
 		8E72AC0A24BFE9DA005CB9B1 /* TextViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */; };
 		8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */; };
 		8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */; };
+		8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
@@ -109,6 +110,7 @@
 		8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController2.swift; sourceTree = "<group>"; };
 		8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAnimationViewContronller.swift; sourceTree = "<group>"; };
+		8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGAffineTransformViewController.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */,
 				8E683EE024C1CE70006CDF9A /* NoResultViewController.swift */,
 				8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */,
+				8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -527,6 +530,7 @@
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
 				8E9FFCCD24BC8AE000E7EC0F /* RotateViewController.swift in Sources */,
+				8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */,
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
 				8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */,
 				8E683EDF24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift in Sources */,
