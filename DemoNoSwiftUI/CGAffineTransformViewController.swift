@@ -23,7 +23,7 @@ class CGAffineTransformViewController: UIViewController {
   private lazy var imageView: UIImageView = {
     let img = UIImage(named: "008")
     let imgV = UIImageView(image: img)
-    imgV.contentMode = .scaleAspectFill
+    imgV.contentMode = .scaleToFill
     return imgV
   }()
   
@@ -59,6 +59,9 @@ class CGAffineTransformViewController: UIViewController {
     view.endEditing(true)
   }
   
+  
+  var originFrame: CGRect!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -76,13 +79,16 @@ class CGAffineTransformViewController: UIViewController {
     grayView.snp.makeConstraints { (make) in
       make.size.equalTo(100)
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().dividedBy(2)
+      make.top.equalTo(150)
     }
     
-    imageView.snp.makeConstraints { (make) in
-      make.size.equalTo(grayView)
-      make.center.equalTo(grayView)
-    }
+    imageView.frame = CGRect(origin: CGPoint(x: 0, y: 150), size: CGSize(width: 100, height: 100)).offsetBy(dx: UIScreen.main.bounds.width/2 - 50, dy: 0)
+    originFrame = imageView.frame
+    
+//    imageView.snp.makeConstraints { (make) in
+//      make.size.equalTo(grayView)
+//      make.center.equalTo(grayView)
+//    }
     
 //    a,  b, 0
 //    c,  d, 0
@@ -178,6 +184,17 @@ class CGAffineTransformViewController: UIViewController {
       stack.addArrangedSubview(hStack)
     } while false
     
+    repeat {
+      let hStack = createStack()
+      hStack.addArrangedSubview(createPointTextField(with: "anchor.x = ? [0-1]"))
+      hStack.addArrangedSubview(createPointTextField(with: "anchor.y = ? [0-1]"))
+      view.addSubview(hStack)
+      hStack.snp.makeConstraints { (make) in
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.leading.trailing.equalToSuperview()
+      }
+    } while false
+    
     safeBottomLayoutGuide.snp.makeConstraints { (make) in
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       make.leading.trailing.equalToSuperview()
@@ -193,6 +210,7 @@ class CGAffineTransformViewController: UIViewController {
   }
   
   func observerTextChanged() {
+    // 仿射变换的设置
     if container.count == 10 {
       Observable.combineLatest(container)
         .observeOn(MainScheduler.instance)
@@ -225,6 +243,39 @@ class CGAffineTransformViewController: UIViewController {
         })
         .disposed(by: disposeBag)
     }
+    
+    // 锚点的设置
+    if anchorContainer.count == 2 {
+      Observable.combineLatest(anchorContainer)
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { [weak self] (infos) in
+          let x = Float(infos[0]) ?? 0.5
+          let y = Float(infos[1]) ?? 0.5
+          let point = CGPoint(x: CGFloat(x), y: CGFloat(y))
+          guard let self = self else { return }
+          /*
+           position.x = frame.origin.x + anchorPoint.x * bounds.size.width；
+           position.y = frame.origin.y + anchorPoint.y * bounds.size.height；
+           
+           frame.origin.x = position.x - anchorPoint.x * bounds.size.width；
+           frame.origin.y = position.y - anchorPoint.y * bounds.size.height；
+           **/
+//          let size = self.imageView.frame.size
+//          let center = self.imageView.center
+          
+          self.imageView.layer.anchorPoint  = point
+          self.imageView.frame = self.originFrame
+          
+//          self.imageView.applyTransform(withScale: 1, anchorPoint: point)
+          
+//          let frame = self.imageView.frame
+//          var old = self.imageView.layer.position
+//          self.imageView.layer.anchorPoint = CGPoint(x: CGFloat(x), y: CGFloat(y))
+//          old.x += CGFloat(x) * frame.width
+//          old.y += CGFloat(y) * frame.width
+//          self.imageView.layer.position = old
+        }).disposed(by: disposeBag)
+    }
   }
   var disposeBag = DisposeBag()
   var container = [ControlProperty<String>]()
@@ -233,12 +284,21 @@ class CGAffineTransformViewController: UIViewController {
     let textField = UITextField()
     textField.textAlignment = .center
     textField.placeholder = placeholder
-    // 有风险
+    // 有风险, 数量过多
     container.append(textField.rx.text.orEmpty)
     
     return textField
   }
   
+  var anchorContainer = [ControlProperty<String>]()
+  
+  func createPointTextField(with placeholder: String) -> UITextField {
+    let textField = UITextField()
+    textField.textAlignment = .center
+    textField.placeholder = placeholder
+    anchorContainer.append(textField.rx.text.orEmpty)
+    return textField
+  }
   func createStack(with axis: NSLayoutConstraint.Axis = .horizontal) -> UIStackView {
     let hStack = UIStackView()
     hStack.axis = axis
