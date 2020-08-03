@@ -27,6 +27,9 @@ class RootTableViewController : UITableViewController {
             ("no-result for search", NoResultViewController.self),
             ("resource load", LoadBundletViewController.self),
             ("CGAffineTransform", CGAffineTransformViewController.self),
+            ("GestureView rx", GestureViewController.self),
+            ("手势冲突 scrollview", CollectionViewGestureViewController.self),
+
             ("normal", ViewController.self)
     ]
   }()
