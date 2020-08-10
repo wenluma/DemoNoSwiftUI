@@ -23,17 +23,48 @@ class RotateViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  private lazy var imgView: UIView = {
+  private lazy var imgView: UIImageView = {
     let imgView = UIImageView()
     imgView.image = UIImage(named: "008")
+//    imgView.contentMode = .scaleAspectFit
     return imgView
   }()
+  
+  func imageViewRealSize(imgSize: CGSize, viewSize: CGSize) -> CGSize {
+    let imgWidth = imgSize.width
+    let imgHeight = imgSize.height
+    let viewWidth = viewSize.width
+    let viewHeight = viewSize.height
+    guard imgWidth > 0,
+      imgHeight > 0,
+      viewWidth > 0,
+      viewHeight > 0 else {
+        return .zero
+    }
+    let size: CGSize
+    if (imgSize.width / imgSize.height) > (viewSize.width / viewSize.height) {
+      size = CGSize(width: viewSize.width, height: viewSize.width * imgSize.height/imgSize.width)
+    } else {
+      size = CGSize(width: imgSize.width * viewSize.height / imgSize.height , height: viewSize.height)
+    }
+    return size
+  }
+  
+  func updateFrames(frame: CGRect) {
+    if let imgSize = imgView.image?.size {
+      let size = imageViewRealSize(imgSize: imgSize, viewSize: frame.size)
+      let rect = CGRect(origin: .zero, size: size).integral
+      imgView.frame = rect
+      imgView.center = CGPoint(x: frame.midX, y: frame.midY)
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     view.addSubview(imgView)
-    view.setNeedsUpdateConstraints()
+    
+    updateFrames(frame: UIScreen.main.bounds)
     
     NotificationCenter.default.addObserver(self, selector: #selector(changeOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
     LOG_DEBUG("view.Transform = \(view.transform)")
@@ -65,13 +96,6 @@ class RotateViewController: UIViewController {
       print("unknow")
     }
     print("app = \(UIApplication.shared.statusBarOrientation.rawValue)")
-  }
-  
-  override func updateViewConstraints() {
-    super.updateViewConstraints()
-    imgView.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -107,19 +131,13 @@ class RotateViewController: UIViewController {
     LOG_DEBUG("coordinator.fromView = \(coordinator.view(forKey: UITransitionContextViewKey.from))")
     LOG_DEBUG("coordinator.toView = \(coordinator.view(forKey: UITransitionContextViewKey.to))")
 
-//    coordinator.containerView.addSubview(imgView)
-//    coordinator.containerView.addSubview(imgView)
-//    imgView.snp.remakeConstraints { (make) in
-//      make.edges.equalToSuperview()
-//    }
+    coordinator.containerView.addSubview(imgView)
+    updateFrames(frame: coordinator.containerView.frame)
     
-    coordinator.animate(alongsideTransition: { (context) in
-//      self.imgView.frame = context.containerView.frame
+    coordinator.animate(alongsideTransition: { [weak self] (context) in
+      self?.updateFrames(frame: coordinator.containerView.frame)
     }) { (context) in
-//      self.view.addSubview(self.imgView)
-//      self.imgView.snp.remakeConstraints { (make) in
-//        make.edges.equalToSuperview()
-//      }
+      self.view.addSubview(self.imgView)
     }
   }
 }
