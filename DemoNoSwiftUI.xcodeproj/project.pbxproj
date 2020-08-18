@@ -38,6 +38,7 @@
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
 		8E7FB5E22447FB5400AD8C83 /* MGLSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */; };
+		8E81C88D24EBBE83009A1316 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81C88C24EBBE83009A1316 /* DataExt.swift */; };
 		8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */; };
 		8E97202624B8094600382E40 /* SwitchUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202524B8094600382E40 /* SwitchUIViewController.swift */; };
 		8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97202C24B8391D00382E40 /* LayoutViewController.swift */; };
@@ -117,6 +118,7 @@
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
 		8E7FB5E12447FB5400AD8C83 /* MGLSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLSlider.swift; sourceTree = "<group>"; };
+		8E81C88C24EBBE83009A1316 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWrapper.swift; sourceTree = "<group>"; };
 		8E97202524B8094600382E40 /* SwitchUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUIViewController.swift; sourceTree = "<group>"; };
 		8E97202C24B8391D00382E40 /* LayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				8E57247C24852D4500A3C13A /* BlurBgButton.swift */,
 				8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */,
 				8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */,
+				8E81C88C24EBBE83009A1316 /* DataExt.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
 				8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */,
 				8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */,
@@ -532,6 +535,7 @@
 				8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */,
 				8E6F0AF524B5BFE500405B73 /* InputViewController2.swift in Sources */,
 				8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */,
+				8E81C88D24EBBE83009A1316 /* DataExt.swift in Sources */,
 				8E72AC0A24BFE9DA005CB9B1 /* TextViewController2.swift in Sources */,
 				8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */,
 				8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */,
