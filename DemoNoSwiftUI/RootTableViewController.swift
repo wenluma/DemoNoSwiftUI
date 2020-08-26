@@ -20,6 +20,7 @@ class RootTableViewController : UITableViewController {
             ("cell selected", TableViewController2.self),
             ("switchUI", SwitchUIViewController.self),
             ("layout", LayoutViewController.self),
+            ("layout2 - 四宫格", LayoutViewController2.self),
             ("rotate", RotateViewController.self),
             ("textview 单行", TextViewController.self),
             ("textview-tail-icon 折行", TextViewController2.self),
