@@ -11,6 +11,15 @@ import UIKit
 // https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values
 
 extension UIColor {
+  
+  // 随机颜色
+  class func random() -> UIColor {
+    let r = Int.random(in: 0...255)
+    let g = Int.random(in: 0...255)
+    let b = Int.random(in: 0...255)
+    return UIColor(red: r, green: g, blue: b)
+  }
+  
   convenience init(red: Int, green: Int, blue: Int) {
       assert(red >= 0 && red <= 255, "Invalid red component")
       assert(green >= 0 && green <= 255, "Invalid green component")
