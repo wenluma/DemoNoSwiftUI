@@ -12,6 +12,8 @@
 		8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */; };
 		8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCD24791B930074AFD6 /* FirstViewController.swift */; };
 		8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */; };
+		8E1319D024FCCC1D0005D63F /* ReusedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */; };
+		8E1319D124FCCDF10005D63F /* ReusedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */; };
 		8E14432924C59C06000B9AC8 /* ycnn_models in Resources */ = {isa = PBXBuildFile; fileRef = 8E14432824C59C06000B9AC8 /* ycnn_models */; };
 		8E14432B24C59CAC000B9AC8 /* LoadBundletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */; };
 		8E1C5E2624419BF1005CBACA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2524419BF1005CBACA /* Const.swift */; };
@@ -93,6 +95,7 @@
 		8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollZoom.swift; sourceTree = "<group>"; };
 		8E11AFCD24791B930074AFD6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		8E11AFCF24791BA00074AFD6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusedContainer.swift; sourceTree = "<group>"; };
 		8E14432824C59C06000B9AC8 /* ycnn_models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ycnn_models; sourceTree = "<group>"; };
 		8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadBundletViewController.swift; sourceTree = "<group>"; };
 		8E1C5E2524419BF1005CBACA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 				8E81C88C24EBBE83009A1316 /* DataExt.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
 				8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */,
+				8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */,
 				8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */,
 				8E14432824C59C06000B9AC8 /* ycnn_models */,
 				8EDF53272440222600517EAE /* Main.storyboard */,
@@ -544,6 +548,7 @@
 				8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
+				8E1319D024FCCC1D0005D63F /* ReusedContainer.swift in Sources */,
 				8E9FFCCD24BC8AE000E7EC0F /* RotateViewController.swift in Sources */,
 				8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */,
 				8E9C9B55246692240040A7B3 /* MGLFileManager.swift in Sources */,
@@ -574,6 +579,7 @@
 				8EB628F0244D7A6B0083B322 /* MGLStringEx.swift in Sources */,
 				8EDF53392440222800517EAE /* DemoNoSwiftUITests.swift in Sources */,
 				8EB628EF244D7A340083B322 /* SubStringTests.swift in Sources */,
+				8E1319D124FCCDF10005D63F /* ReusedContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
