@@ -37,6 +37,7 @@
 		8E72AC0A24BFE9DA005CB9B1 /* TextViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */; };
 		8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */; };
 		8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */; };
+		8E764A7724FDF0640010BA45 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E764A7624FDF0640010BA45 /* ArrayExt.swift */; };
 		8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
 		8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */; };
@@ -119,6 +120,7 @@
 		8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController2.swift; sourceTree = "<group>"; };
 		8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAnimationViewContronller.swift; sourceTree = "<group>"; };
+		8E764A7624FDF0640010BA45 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGAffineTransformViewController.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
 		8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJAddressProtocol.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */,
 				8E72AC0B24BFEB18005CB9B1 /* UIColorExt.swift */,
 				8E81C88C24EBBE83009A1316 /* DataExt.swift */,
+				8E764A7624FDF0640010BA45 /* ArrayExt.swift */,
 				8E7FB5D024470A7500AD8C83 /* OBJAddressProtocol.swift */,
 				8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */,
 				8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */,
@@ -533,6 +536,7 @@
 				8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */,
 				8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */,
 				8E683EE124C1CE71006CDF9A /* NoResultViewController.swift in Sources */,
+				8E764A7724FDF0640010BA45 /* ArrayExt.swift in Sources */,
 				8EC74DE124D2F5FD00FFC7A6 /* GestureViewController.swift in Sources */,
 				8E1C5EA124459830005CBACA /* Fruit.swift in Sources */,
 				8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */,
