@@ -64,6 +64,7 @@
 		8EDF532E2440222800517EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDF532C2440222800517EAE /* LaunchScreen.storyboard */; };
 		8EDF53392440222800517EAE /* DemoNoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53382440222800517EAE /* DemoNoSwiftUITests.swift */; };
 		8EDF53442440222800517EAE /* DemoNoSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF53432440222800517EAE /* DemoNoSwiftUIUITests.swift */; };
+		8EECBFDC24FF6D740090C553 /* LayoutViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EECBFDB24FF6D740090C553 /* LayoutViewController3.swift */; };
 		8EEFBA0524ADB37B008C2243 /* MGLDataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */; };
 		8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */; };
 		8EF1E415244935EC00323FAC /* MGLUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */; };
@@ -152,6 +153,7 @@
 		8EDF533F2440222800517EAE /* DemoNoSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoNoSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDF53432440222800517EAE /* DemoNoSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNoSwiftUIUITests.swift; sourceTree = "<group>"; };
 		8EDF53452440222800517EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EECBFDB24FF6D740090C553 /* LayoutViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController3.swift; sourceTree = "<group>"; };
 		8EEFBA0424ADB37B008C2243 /* MGLDataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLDataCollection.swift; sourceTree = "<group>"; };
 		8EF1E412244927DB00323FAC /* MGLUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLUIViewExtension.swift; sourceTree = "<group>"; };
 		ADEDE65026F7F05B39B748E3 /* Pods-DemoNoSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNoSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-DemoNoSwiftUI/Pods-DemoNoSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				8E97202524B8094600382E40 /* SwitchUIViewController.swift */,
 				8E97202C24B8391D00382E40 /* LayoutViewController.swift */,
 				8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */,
+				8EECBFDB24FF6D740090C553 /* LayoutViewController3.swift */,
 				8E9FFCCC24BC8AE000E7EC0F /* RotateViewController.swift */,
 				8E72AC0424BED796005CB9B1 /* TextViewController.swift */,
 				8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */,
@@ -564,6 +567,7 @@
 				8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */,
 				8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */,
 				8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */,
+				8EECBFDC24FF6D740090C553 /* LayoutViewController3.swift in Sources */,
 				8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */,
 				8E209E2B24F63E2C0083C151 /* LayoutViewController2.swift in Sources */,
 				8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */,

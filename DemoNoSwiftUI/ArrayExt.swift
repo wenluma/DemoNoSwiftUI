@@ -28,3 +28,13 @@ extension MutableCollection {
     }
   }
 }
+
+extension Collection {
+  static func repeated(initCount: Int, factory: () -> Element) -> [Element] {
+    var list = [Element]()
+    for _ in 0..<initCount {
+      list.append(factory())
+    }
+   return list
+  }
+}
