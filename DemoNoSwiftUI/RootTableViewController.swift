@@ -23,7 +23,7 @@ class RootTableViewController : UITableViewController {
             ("layout2 - 四宫格", LayoutViewController2.self),
             ("layout3 - list", LayoutViewController3.self),
             ("layout4 - 子 view 影响 super view", LayoutViewController4.self),
-
+            ("image edge", ImageViewController.self),
             ("rotate", RotateViewController.self),
             ("textview 单行", TextViewController.self),
             ("textview-tail-icon 折行", TextViewController2.self),

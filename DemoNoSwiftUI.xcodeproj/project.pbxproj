@@ -22,6 +22,7 @@
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
 		8E209E2B24F63E2C0083C151 /* LayoutViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */; };
+		8E3F7DB6250665190008CFA8 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F7DB5250665190008CFA8 /* ImageViewController.swift */; };
 		8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */; };
 		8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E452DD424B485D500DBA526 /* InputViewController.swift */; };
 		8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F58DC24AADD4D00C4B9C7 /* CGRectExtension.swift */; };
@@ -107,6 +108,7 @@
 		8E1C5EA02445982F005CBACA /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDemo.swift; sourceTree = "<group>"; };
 		8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController2.swift; sourceTree = "<group>"; };
+		8E3F7DB5250665190008CFA8 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGestureViewController.swift; sourceTree = "<group>"; };
 		8E452DD424B485D500DBA526 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		8E4F58DC24AADD4D00C4B9C7 /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				8EDF53232440222600517EAE /* SceneDelegate.swift */,
 				8EDF53252440222600517EAE /* ViewController.swift */,
 				8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */,
+				8E3F7DB5250665190008CFA8 /* ImageViewController.swift */,
 				8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */,
 				8E5AAC9E2489D67F0000F458 /* RxObservableViewController.swift */,
 				8E6E880224B6A88F004FD489 /* TableViewController.swift */,
@@ -536,6 +539,7 @@
 				8E14432B24C59CAC000B9AC8 /* LoadBundletViewController.swift in Sources */,
 				8E1C5E2624419BF1005CBACA /* Const.swift in Sources */,
 				8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */,
+				8E3F7DB6250665190008CFA8 /* ImageViewController.swift in Sources */,
 				8EDF53222440222600517EAE /* AppDelegate.swift in Sources */,
 				8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */,
 				8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */,
