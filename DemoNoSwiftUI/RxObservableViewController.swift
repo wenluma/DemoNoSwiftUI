@@ -62,7 +62,7 @@ class RxObservableViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
  
-  var disposeBag: DisposeBag? = DisposeBag()
+  var disposeBag: DisposeBag = DisposeBag()
   
   private lazy var textimageButton : UIButton = {
     let button = UIButton(type: .custom)
@@ -98,6 +98,9 @@ class RxObservableViewController: UIViewController {
     view.addSubview(gradientView)
     
     view.setNeedsUpdateConstraints()
+    
+    let tap = UITapGestureRecognizer(target: self, action: #selector(rxdelay2))
+    view.addGestureRecognizer(tap)
   }
   
   override func updateViewConstraints() {
@@ -146,4 +149,22 @@ class RxObservableViewController: UIViewController {
        
        observable.subscribe()
   }
+  
+  @objc func rxdelay() {
+    let start = Date()
+// 方式1
+    Observable<Int>.empty().delay(.seconds(1), scheduler: SerialDispatchQueueScheduler(qos: .userInitiated)).subscribe {  (_) in
+      let end = Date()
+      print("diff time = \(end.timeIntervalSince(start)), current thread = \(Thread.current) ")
+    }.disposed(by: disposeBag)
+  }
+  
+  @objc func rxdelay2() {
+    let start = Date()
+  // 方式1
+    Observable<Int>.timer(.seconds(1), period: .never, scheduler: SerialDispatchQueueScheduler(qos: .userInitiated)).subscribe {  (_) in
+        let end = Date()
+        print("diff time = \(end.timeIntervalSince(start)), current thread = \(Thread.current) ")
+      }.disposed(by: disposeBag)
+    }
 }
