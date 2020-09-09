@@ -38,3 +38,25 @@ extension Collection {
    return list
   }
 }
+
+enum SwapError: Error {
+  case wrongFirstIndex
+  case wrongSecondIndex
+}
+
+extension Array {
+  mutating func detailedSafeSwapAt(_ i: Int, _ j: Int) throws {
+    if !(0..<count ~= i) { throw SwapError.wrongFirstIndex }
+    if !(0..<count ~= j) { throw SwapError.wrongSecondIndex }
+    swapAt(i, j)
+  }
+  
+  @discardableResult mutating func safeSwapAt(_ i: Int, _ j: Int) -> Bool {
+    do {
+      try detailedSafeSwapAt(i, j)
+      return true
+    } catch {
+      return false
+    }
+  }
+}
