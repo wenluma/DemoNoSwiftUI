@@ -60,3 +60,18 @@ extension Array {
     }
   }
 }
+
+public extension Array where Element: Hashable {
+  func distinct() -> [Element] {
+    var container =  Set<Element>()
+    var list = [Element]()
+    for item in self {
+      if container.contains(item) {
+        continue
+      }
+      container.insert(item)
+      list.append(item)
+    }
+    return list
+  }
+}

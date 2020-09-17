@@ -106,4 +106,41 @@ class DemoNoSwiftUITests: XCTestCase {
     }
   }
   
+  func testArrayDistinct() {
+    var list = [1,2,3,0,2,3,1,0]
+    let dis = list.distinct()
+    XCTAssert(dis == [1,2,3,0], "数据不对")
+    
+    var list2 = [0,1,2,3,0,]
+    let dis2 = list2.distinct()
+    XCTAssert(dis2 != [1,2,3,0], "数据不对")
+
+  }
+  
+  func testHasher() {
+    var hasher = Hasher()
+    hasher.combine("1")
+    hasher.combine("2")
+    hasher.combine("3")
+
+    let v1 = hasher.finalize()
+
+    var ha = Hasher()
+    ha.combine("1")
+    ha.combine("3")
+    ha.combine("2")
+
+    let v2 = ha.finalize()
+    
+    XCTAssert(v1 != v2, "\(v1) != \(v2)")
+  }
+  
+  
+  func testStride() {
+    // 可以设定跳步间隔
+    for index in stride(from: 0, to: 3, by: 4) {
+        print(index)
+    }
+  }
+  
 }

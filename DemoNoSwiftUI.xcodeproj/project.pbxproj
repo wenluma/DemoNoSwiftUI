@@ -22,6 +22,7 @@
 		8E1C5EA124459830005CBACA /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA02445982F005CBACA /* Fruit.swift */; };
 		8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */; };
 		8E209E2B24F63E2C0083C151 /* LayoutViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */; };
+		8E339B1B2509D3DB000D4DBA /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E764A7624FDF0640010BA45 /* ArrayExt.swift */; };
 		8E3F7DB6250665190008CFA8 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F7DB5250665190008CFA8 /* ImageViewController.swift */; };
 		8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */; };
 		8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E452DD424B485D500DBA526 /* InputViewController.swift */; };
@@ -593,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB628F0244D7A6B0083B322 /* MGLStringEx.swift in Sources */,
+				8E339B1B2509D3DB000D4DBA /* ArrayExt.swift in Sources */,
 				8EDF53392440222800517EAE /* DemoNoSwiftUITests.swift in Sources */,
 				8EB628EF244D7A340083B322 /* SubStringTests.swift in Sources */,
 				8E1319D124FCCDF10005D63F /* ReusedContainer.swift in Sources */,
