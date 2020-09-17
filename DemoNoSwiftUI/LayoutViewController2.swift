@@ -98,6 +98,28 @@ class LayoutViewController2: UIViewController {
     setupLayoutGuide()
     setupGirdViews()
     view.setNeedsUpdateConstraints()
+    
+    let tap = UILongPressGestureRecognizer(target: self, action: #selector(longAction))
+    view.addGestureRecognizer(tap)
+  }
+  
+  @objc func longAction(_ tap: UILongPressGestureRecognizer) {
+    switch tap.state {
+    case .began:
+      let tapPoint = tap.location(in: tap.view)
+      print(tapPoint)
+      
+      for view in girdMembers {
+        if view.frame.contains(tapPoint) {
+          let index = girdMembers.firstIndex(of: view)
+          print("index = \(index), view = \(view.frame)")
+          return
+        }
+      }
+    default:
+      print("tap...\(tap.state)")
+    }
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
