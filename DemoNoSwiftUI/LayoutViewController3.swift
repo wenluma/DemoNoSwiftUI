@@ -17,6 +17,12 @@ class LayoutViewController3: UIViewController {
   }
   
   var usingCount = 2
+  private let space: Int = 3
+  private let limit: Int = 4
+  lazy var maxDetal: Int = {
+    return (limit - 1) * space
+  }()
+  
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -51,21 +57,19 @@ class LayoutViewController3: UIViewController {
   func setupChildLayoutGuides() {
     let g0 = girdGuides[0]
     let g1 = girdGuides[1]
-        
-    let mut: Double = Double(4-usingCount)/Double(8)
-    print("mut = \(mut)")
-    g0.snp.remakeConstraints { (make) in
-      make.trailing.equalTo(edgeGuide.snp.trailing)
-      make.leading.equalTo(edgeGuide.snp.leading)
-      make.top.equalTo(edgeGuide.snp.top)
-      make.height.equalTo(edgeGuide.snp.height).multipliedBy(mut)
+
+    let mut: Double = Double(usingCount)/Double(limit)
+    let offset = mut * Double(maxDetal)
+    g1.snp.remakeConstraints { (make) in
+      make.height.equalTo(edgeGuide).offset(-maxDetal)
+      make.width.equalTo(edgeGuide)
     }
     
-    g1.snp.remakeConstraints { (make) in
-      make.leading.equalTo(edgeGuide.snp.leading)
-      make.trailing.equalTo(edgeGuide.snp.trailing)
-      make.bottom.equalTo(edgeGuide.snp.bottom)
-      make.height.equalTo(g0)
+    // 计算 宽高比  16/9/limit
+    g0.snp.remakeConstraints { (make) in
+      make.width.equalTo(g1.snp.height).multipliedBy(16.0/9.0/Double(limit))
+      make.center.equalTo(edgeGuide)
+      make.height.equalTo(g1).multipliedBy(mut).offset(offset)
     }
   }
   
@@ -73,16 +77,22 @@ class LayoutViewController3: UIViewController {
     girdMembers.forEach({ $0.removeFromSuperview() })
 
     let g0 = girdGuides[0]
-    var lastTop = g0.snp.bottom
+    let g1 = girdGuides[1]
+    var lastTop = g0.snp.top
     for index in 0 ..< usingCount {
       let v = girdMembers[index]
       v.backgroundColor = UIColor.random()
       view.addSubview(v)
-
+      
+      var offset: Int = 3
+      if index == 0 {
+        offset = 0
+      }
       v.snp.makeConstraints { (make) in
-        make.leading.trailing.equalTo(edgeGuide)
-        make.top.equalTo(lastTop)
-        make.height.equalTo(edgeGuide.snp.height).dividedBy(4)
+        make.top.equalTo(lastTop).offset(offset)
+        make.height.equalTo(g1).dividedBy(limit)
+        make.width.equalTo(g0)
+        make.centerX.equalTo(g0)
       }
       lastTop = v.snp.bottom
     }
