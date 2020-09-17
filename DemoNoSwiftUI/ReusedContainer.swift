@@ -8,6 +8,7 @@
 
 import Foundation
 
+// 提供重用机制
 class ReusedContainer<T: Equatable> {
   typealias ReusedFactory = (String) -> T
   
