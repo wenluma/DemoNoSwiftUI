@@ -31,6 +31,7 @@
 		8E5AAC9D2489D4D90000F458 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */; };
 		8E5AAC9F2489D67F0000F458 /* RxObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AAC9E2489D67F0000F458 /* RxObservableViewController.swift */; };
 		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
+		8E5FEA0D2514539D000A75CD /* LayoutViewContorller5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEA0C2514539D000A75CD /* LayoutViewContorller5.swift */; };
 		8E683EDF24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */; };
 		8E683EE124C1CE71006CDF9A /* NoResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E683EE024C1CE70006CDF9A /* NoResultViewController.swift */; };
 		8E6E880324B6A88F004FD489 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E880224B6A88F004FD489 /* TableViewController.swift */; };
@@ -117,6 +118,7 @@
 		8E5AAC9C2489D4D90000F458 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		8E5AAC9E2489D67F0000F458 /* RxObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableViewController.swift; sourceTree = "<group>"; };
 		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		8E5FEA0C2514539D000A75CD /* LayoutViewContorller5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewContorller5.swift; sourceTree = "<group>"; };
 		8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KimVideoMeetingNoResultView.swift; sourceTree = "<group>"; };
 		8E683EE024C1CE70006CDF9A /* NoResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultViewController.swift; sourceTree = "<group>"; };
 		8E6E880224B6A88F004FD489 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */,
 				8EECBFDB24FF6D740090C553 /* LayoutViewController3.swift */,
 				8E75EFB625021EAD00215F4D /* LayoutViewController4.swift */,
+				8E5FEA0C2514539D000A75CD /* LayoutViewContorller5.swift */,
 				8E9FFCCC24BC8AE000E7EC0F /* RotateViewController.swift */,
 				8E72AC0424BED796005CB9B1 /* TextViewController.swift */,
 				8E72AC0924BFE9D9005CB9B1 /* TextViewController2.swift */,
@@ -563,6 +566,7 @@
 				8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
 				8E11AFCC2478FF640074AFD6 /* ScrollZoom.swift in Sources */,
+				8E5FEA0D2514539D000A75CD /* LayoutViewContorller5.swift in Sources */,
 				8E1319D024FCCC1D0005D63F /* ReusedContainer.swift in Sources */,
 				8E9FFCCD24BC8AE000E7EC0F /* RotateViewController.swift in Sources */,
 				8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */,
