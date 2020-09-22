@@ -36,6 +36,8 @@ class RootTableViewController : UITableViewController {
             ("GestureView rx", GestureViewController.self),
             ("手势冲突 scrollview", CollectionViewGestureViewController.self),
 
+            ("阴影", ShadowViewController.self),
+
             ("normal", ViewController.self)
     ]
   }()
