@@ -25,6 +25,7 @@
 		8E309B632519F42800AA2D53 /* ShapeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B622519F42800AA2D53 /* ShapeProtocol.swift */; };
 		8E309B642519F4E500AA2D53 /* ShapeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B622519F42800AA2D53 /* ShapeProtocol.swift */; };
 		8E309B662519F50E00AA2D53 /* ShapeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B652519F50E00AA2D53 /* ShapeProtocolTests.swift */; };
+		8E309B68251B7E3100AA2D53 /* ConvertFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */; };
 		8E339B1B2509D3DB000D4DBA /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E764A7624FDF0640010BA45 /* ArrayExt.swift */; };
 		8E3F7DB6250665190008CFA8 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F7DB5250665190008CFA8 /* ImageViewController.swift */; };
 		8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */; };
@@ -116,6 +117,7 @@
 		8E209E2A24F63E2C0083C151 /* LayoutViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController2.swift; sourceTree = "<group>"; };
 		8E309B622519F42800AA2D53 /* ShapeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocol.swift; sourceTree = "<group>"; };
 		8E309B652519F50E00AA2D53 /* ShapeProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocolTests.swift; sourceTree = "<group>"; };
+		8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFrameViewController.swift; sourceTree = "<group>"; };
 		8E3F7DB5250665190008CFA8 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGestureViewController.swift; sourceTree = "<group>"; };
 		8E452DD424B485D500DBA526 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */,
 				8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */,
 				8EC74DE024D2F5FD00FFC7A6 /* GestureViewController.swift */,
+				8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -559,6 +562,7 @@
 				8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */,
 				8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */,
 				8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */,
+				8E309B68251B7E3100AA2D53 /* ConvertFrameViewController.swift in Sources */,
 				8E683EE124C1CE71006CDF9A /* NoResultViewController.swift in Sources */,
 				8E764A7724FDF0640010BA45 /* ArrayExt.swift in Sources */,
 				8EC74DE124D2F5FD00FFC7A6 /* GestureViewController.swift in Sources */,

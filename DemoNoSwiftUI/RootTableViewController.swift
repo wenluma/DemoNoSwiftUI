@@ -35,7 +35,8 @@ class RootTableViewController : UITableViewController {
             ("CGAffineTransform", CGAffineTransformViewController.self),
             ("GestureView rx", GestureViewController.self),
             ("手势冲突 scrollview", CollectionViewGestureViewController.self),
-
+            ("view 位置变换", ConvertFrameViewController.self),
+            
             ("阴影", ShadowViewController.self),
 
             ("normal", ViewController.self)
