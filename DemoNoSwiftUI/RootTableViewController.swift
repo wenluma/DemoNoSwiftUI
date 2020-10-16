@@ -38,6 +38,7 @@ class RootTableViewController : UITableViewController {
             ("view 位置变换", ConvertFrameViewController.self),
             
             ("阴影", ShadowViewController.self),
+            ("连续present vc", PresentViewController.self),
 
             ("normal", ViewController.self)
     ]

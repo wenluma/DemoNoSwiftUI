@@ -27,6 +27,8 @@
 		8E309B662519F50E00AA2D53 /* ShapeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B652519F50E00AA2D53 /* ShapeProtocolTests.swift */; };
 		8E309B68251B7E3100AA2D53 /* ConvertFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */; };
 		8E339B1B2509D3DB000D4DBA /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E764A7624FDF0640010BA45 /* ArrayExt.swift */; };
+		8E3B079D253998CC0069E1C3 /* MGLViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B079C253998CC0069E1C3 /* MGLViewControllerEx.swift */; };
+		8E3B079F2539A4850069E1C3 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B079E2539A4840069E1C3 /* PresentViewController.swift */; };
 		8E3F7DB6250665190008CFA8 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F7DB5250665190008CFA8 /* ImageViewController.swift */; };
 		8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */; };
 		8E452DD524B485D500DBA526 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E452DD424B485D500DBA526 /* InputViewController.swift */; };
@@ -118,6 +120,8 @@
 		8E309B622519F42800AA2D53 /* ShapeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocol.swift; sourceTree = "<group>"; };
 		8E309B652519F50E00AA2D53 /* ShapeProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocolTests.swift; sourceTree = "<group>"; };
 		8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFrameViewController.swift; sourceTree = "<group>"; };
+		8E3B079C253998CC0069E1C3 /* MGLViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLViewControllerEx.swift; sourceTree = "<group>"; };
+		8E3B079E2539A4840069E1C3 /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		8E3F7DB5250665190008CFA8 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		8E43928024D4091D006F1F42 /* CollectionViewGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGestureViewController.swift; sourceTree = "<group>"; };
 		8E452DD424B485D500DBA526 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */,
 				8EC74DE024D2F5FD00FFC7A6 /* GestureViewController.swift */,
 				8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */,
+				8E3B079E2539A4840069E1C3 /* PresentViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -304,6 +309,7 @@
 				8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */,
 				8E309B622519F42800AA2D53 /* ShapeProtocol.swift */,
 				8E83A8DD24B02C5D00CA536A /* RxWrapper.swift */,
+				8E3B079C253998CC0069E1C3 /* MGLViewControllerEx.swift */,
 				8E14432824C59C06000B9AC8 /* ycnn_models */,
 				8EDF53272440222600517EAE /* Main.storyboard */,
 				8EDF532A2440222800517EAE /* Assets.xcassets */,
@@ -570,6 +576,7 @@
 				8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */,
 				8EB1800C247BA54A00FE90E7 /* MLGUICollectionViewExtension.swift in Sources */,
 				8E5AAC9F2489D67F0000F458 /* RxObservableViewController.swift in Sources */,
+				8E3B079F2539A4850069E1C3 /* PresentViewController.swift in Sources */,
 				8ED470AE24A9F7E300F745C1 /* FrameTransformViewController.swift in Sources */,
 				8E11AFCE24791B930074AFD6 /* FirstViewController.swift in Sources */,
 				8E6F0AF524B5BFE500405B73 /* InputViewController2.swift in Sources */,
@@ -595,6 +602,7 @@
 				8E83A8DE24B02C5D00CA536A /* RxWrapper.swift in Sources */,
 				8E97202D24B8391D00382E40 /* LayoutViewController.swift in Sources */,
 				8EA22E38248DE42C00A53008 /* MyTableViewController.swift in Sources */,
+				8E3B079D253998CC0069E1C3 /* MGLViewControllerEx.swift in Sources */,
 				8EECBFDC24FF6D740090C553 /* LayoutViewController3.swift in Sources */,
 				8E4F58DD24AADD4D00C4B9C7 /* CGRectExtension.swift in Sources */,
 				8E209E2B24F63E2C0083C151 /* LayoutViewController2.swift in Sources */,
