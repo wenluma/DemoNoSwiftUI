@@ -13,6 +13,7 @@ class RootTableViewController : UITableViewController {
   var items: [(String, UIViewController.Type)] = {
     return [("rx", RxObservableViewController.self),
             ("table", MyTableViewController.self),
+            ("table test", TMyTableViewController.self),
             ("frame-transform", FrameTransformViewController.self),
             ("safe area", SafeAreaViewController.self),
             ("keyboard", InputViewController.self),
