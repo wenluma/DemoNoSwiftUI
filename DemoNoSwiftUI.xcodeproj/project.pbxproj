@@ -38,6 +38,10 @@
 		8E5AAC9F2489D67F0000F458 /* RxObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AAC9E2489D67F0000F458 /* RxObservableViewController.swift */; };
 		8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */; };
 		8E5FEA0D2514539D000A75CD /* LayoutViewContorller5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FEA0C2514539D000A75CD /* LayoutViewContorller5.swift */; };
+		8E614688253D81D3002D36E8 /* SplashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E614687253D81D3002D36E8 /* SplashManager.swift */; };
+		8E61468A253D81F5002D36E8 /* SplashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E614689253D81F5002D36E8 /* SplashProtocol.swift */; };
+		8E61468C253D846C002D36E8 /* SplashConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61468B253D846C002D36E8 /* SplashConfig.swift */; };
+		8E61468E253D8F51002D36E8 /* SplashItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61468D253D8F51002D36E8 /* SplashItem.swift */; };
 		8E683EDF24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */; };
 		8E683EE124C1CE71006CDF9A /* NoResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E683EE024C1CE70006CDF9A /* NoResultViewController.swift */; };
 		8E6E880324B6A88F004FD489 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E880224B6A88F004FD489 /* TableViewController.swift */; };
@@ -48,6 +52,7 @@
 		8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */; };
 		8E75EFB725021EAD00215F4D /* LayoutViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75EFB625021EAD00215F4D /* LayoutViewController4.swift */; };
 		8E764A7724FDF0640010BA45 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E764A7624FDF0640010BA45 /* ArrayExt.swift */; };
+		8E76BB0525406BEC0036BFA6 /* TMyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76BB0425406BEC0036BFA6 /* TMyTableViewController.swift */; };
 		8E77AD0C24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */; };
 		8E7DEA122515D86C004D1D1E /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DEA112515D86C004D1D1E /* ShadowViewController.swift */; };
 		8E7FB5CF2446F47800AD8C83 /* MGLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */; };
@@ -131,6 +136,10 @@
 		8E5AAC9E2489D67F0000F458 /* RxObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableViewController.swift; sourceTree = "<group>"; };
 		8E5E7DF22464FEC600B8B59D /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		8E5FEA0C2514539D000A75CD /* LayoutViewContorller5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewContorller5.swift; sourceTree = "<group>"; };
+		8E614687253D81D3002D36E8 /* SplashManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashManager.swift; sourceTree = "<group>"; };
+		8E614689253D81F5002D36E8 /* SplashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocol.swift; sourceTree = "<group>"; };
+		8E61468B253D846C002D36E8 /* SplashConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConfig.swift; sourceTree = "<group>"; };
+		8E61468D253D8F51002D36E8 /* SplashItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashItem.swift; sourceTree = "<group>"; };
 		8E683EDE24C1BBEF006CDF9A /* KimVideoMeetingNoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KimVideoMeetingNoResultView.swift; sourceTree = "<group>"; };
 		8E683EE024C1CE70006CDF9A /* NoResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultViewController.swift; sourceTree = "<group>"; };
 		8E6E880224B6A88F004FD489 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +150,7 @@
 		8E72AC1624C035E2005CB9B1 /* WithoutAnimationViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAnimationViewContronller.swift; sourceTree = "<group>"; };
 		8E75EFB625021EAD00215F4D /* LayoutViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutViewController4.swift; sourceTree = "<group>"; };
 		8E764A7624FDF0640010BA45 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
+		8E76BB0425406BEC0036BFA6 /* TMyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMyTableViewController.swift; sourceTree = "<group>"; };
 		8E77AD0B24C7D4CA00AD90F3 /* CGAffineTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGAffineTransformViewController.swift; sourceTree = "<group>"; };
 		8E7DEA112515D86C004D1D1E /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		8E7FB5CE2446F47800AD8C83 /* MGLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLImageExtension.swift; sourceTree = "<group>"; };
@@ -227,6 +237,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E614686253D80A8002D36E8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8E614687253D81D3002D36E8 /* SplashManager.swift */,
+				8E614689253D81F5002D36E8 /* SplashProtocol.swift */,
+				8E61468D253D8F51002D36E8 /* SplashItem.swift */,
+				8E61468B253D846C002D36E8 /* SplashConfig.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		8EDF53152440222600517EAE = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +273,7 @@
 		8EDF53202440222600517EAE /* DemoNoSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8E614686253D80A8002D36E8 /* Splash */,
 				8EDF53212440222600517EAE /* AppDelegate.swift */,
 				8EDF53232440222600517EAE /* SceneDelegate.swift */,
 				8EDF53252440222600517EAE /* ViewController.swift */,
@@ -285,6 +307,7 @@
 				8EC74DE024D2F5FD00FFC7A6 /* GestureViewController.swift */,
 				8E309B67251B7E3100AA2D53 /* ConvertFrameViewController.swift */,
 				8E3B079E2539A4840069E1C3 /* PresentViewController.swift */,
+				8E76BB0425406BEC0036BFA6 /* TMyTableViewController.swift */,
 				8E11AFCB2478FF640074AFD6 /* ScrollZoom.swift */,
 				8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */,
 				8E1C5EA82445DDEA005CBACA /* ViewControllerDemo.swift */,
@@ -559,6 +582,7 @@
 				8EDF53262440222600517EAE /* ViewController.swift in Sources */,
 				8EEFBA0524ADB37B008C2243 /* MGLDataCollection.swift in Sources */,
 				8E11AFCA2478D43E0074AFD6 /* CollectionViewContoller.swift in Sources */,
+				8E61468E253D8F51002D36E8 /* SplashItem.swift in Sources */,
 				8E14432B24C59CAC000B9AC8 /* LoadBundletViewController.swift in Sources */,
 				8E1C5E2624419BF1005CBACA /* Const.swift in Sources */,
 				8E11AFD024791BA00074AFD6 /* SecondViewController.swift in Sources */,
@@ -568,7 +592,9 @@
 				8E72AC0C24BFEB18005CB9B1 /* UIColorExt.swift in Sources */,
 				8E7FB5D124470A7500AD8C83 /* OBJAddressProtocol.swift in Sources */,
 				8EF1E413244927DB00323FAC /* MGLUIViewExtension.swift in Sources */,
+				8E76BB0525406BEC0036BFA6 /* TMyTableViewController.swift in Sources */,
 				8E309B68251B7E3100AA2D53 /* ConvertFrameViewController.swift in Sources */,
+				8E614688253D81D3002D36E8 /* SplashManager.swift in Sources */,
 				8E683EE124C1CE71006CDF9A /* NoResultViewController.swift in Sources */,
 				8E764A7724FDF0640010BA45 /* ArrayExt.swift in Sources */,
 				8EC74DE124D2F5FD00FFC7A6 /* GestureViewController.swift in Sources */,
@@ -583,6 +609,7 @@
 				8E57247D24852D4600A3C13A /* BlurBgButton.swift in Sources */,
 				8E81C88D24EBBE83009A1316 /* DataExt.swift in Sources */,
 				8E72AC0A24BFE9DA005CB9B1 /* TextViewController2.swift in Sources */,
+				8E61468A253D81F5002D36E8 /* SplashProtocol.swift in Sources */,
 				8E43928124D4091E006F1F42 /* CollectionViewGestureViewController.swift in Sources */,
 				8E72AC1724C035E4005CB9B1 /* WithoutAnimationViewContronller.swift in Sources */,
 				8EDF53242440222600517EAE /* SceneDelegate.swift in Sources */,
@@ -609,6 +636,7 @@
 				8EAC44392459170C004F4567 /* MGLTextInputDemo.swift in Sources */,
 				8E6E880324B6A88F004FD489 /* TableViewController.swift in Sources */,
 				8E5AAC9D2489D4D90000F458 /* RootTableViewController.swift in Sources */,
+				8E61468C253D846C002D36E8 /* SplashConfig.swift in Sources */,
 				8E5E7DF32464FEC600B8B59D /* KeyboardManager.swift in Sources */,
 				8E1C5EA92445DDEB005CBACA /* ViewControllerDemo.swift in Sources */,
 				8E309B632519F42800AA2D53 /* ShapeProtocol.swift in Sources */,
@@ -794,8 +822,8 @@
 			baseConfigurationReference = B8841388C25EF7CBD3983115 /* Pods-DemoNoSwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SMRC976R46;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoNoSwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -804,6 +832,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mgl.DemoNoSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -814,8 +843,8 @@
 			baseConfigurationReference = ADEDE65026F7F05B39B748E3 /* Pods-DemoNoSwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SMRC976R46;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoNoSwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -824,6 +853,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mgl.DemoNoSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -143,4 +143,16 @@ class DemoNoSwiftUITests: XCTestCase {
     }
   }
   
+  func testDate() {
+    //
+    let date = Date()
+    // 当前时间戳
+    let interval = date.timeIntervalSince1970
+    // 获取到当前时区的偏移时间戳差值
+    let offset = TimeZone.current.secondsFromGMT()
+    let current = interval + Double(offset)
+    let stamp = Int64(current * 1000)
+    print(stamp)
+  }
+  
 }
