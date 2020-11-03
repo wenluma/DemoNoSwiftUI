@@ -16,6 +16,7 @@
 		8E1319D124FCCDF10005D63F /* ReusedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */; };
 		8E14432924C59C06000B9AC8 /* ycnn_models in Resources */ = {isa = PBXBuildFile; fileRef = 8E14432824C59C06000B9AC8 /* ycnn_models */; };
 		8E14432B24C59CAC000B9AC8 /* LoadBundletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */; };
+		8E15900C254A94FD000F17AB /* MYDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15900B254A94FD000F17AB /* MYDictionaryTests.swift */; };
 		8E1C5E2624419BF1005CBACA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2524419BF1005CBACA /* Const.swift */; };
 		8E1C5E2B2441B6DE005CBACA /* MGLStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */; };
 		8E1C5E9F24456A67005CBACA /* YYLabelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */; };
@@ -116,6 +117,7 @@
 		8E1319CF24FCCC1D0005D63F /* ReusedContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusedContainer.swift; sourceTree = "<group>"; };
 		8E14432824C59C06000B9AC8 /* ycnn_models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ycnn_models; sourceTree = "<group>"; };
 		8E14432A24C59CAC000B9AC8 /* LoadBundletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadBundletViewController.swift; sourceTree = "<group>"; };
+		8E15900B254A94FD000F17AB /* MYDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYDictionaryTests.swift; sourceTree = "<group>"; };
 		8E1C5E2524419BF1005CBACA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		8E1C5E2A2441B6DE005CBACA /* MGLStringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLStringEx.swift; sourceTree = "<group>"; };
 		8E1C5E9E24456A67005CBACA /* YYLabelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYLabelDemo.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				8EDF53382440222800517EAE /* DemoNoSwiftUITests.swift */,
 				8EB628EE244D7A340083B322 /* SubStringTests.swift */,
+				8E15900B254A94FD000F17AB /* MYDictionaryTests.swift */,
 				8E309B652519F50E00AA2D53 /* ShapeProtocolTests.swift */,
 				8EDF533A2440222800517EAE /* Info.plist */,
 			);
@@ -650,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB628F0244D7A6B0083B322 /* MGLStringEx.swift in Sources */,
+				8E15900C254A94FD000F17AB /* MYDictionaryTests.swift in Sources */,
 				8E309B662519F50E00AA2D53 /* ShapeProtocolTests.swift in Sources */,
 				8E339B1B2509D3DB000D4DBA /* ArrayExt.swift in Sources */,
 				8EDF53392440222800517EAE /* DemoNoSwiftUITests.swift in Sources */,
